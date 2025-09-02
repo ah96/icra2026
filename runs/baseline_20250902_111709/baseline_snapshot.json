@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-09-02 11:17:09",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+  "python_version": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "cwd": "/home/robolab/git/icra2026",
+  "rddl_files": {
+    "rddl/instance.rddl": {
+      "sha256": "fe9c16c4434c0e1585012e603af8187456b695d8c64805ac8acf37c612644350"
+    },
+    "rddl/domain.rddl": {
+      "sha256": "457cd4bc9c6578cf21ea8913024632eead598f2b4cb03388a9005816f918c948"
+    }
+  }
+}

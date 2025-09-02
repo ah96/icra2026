@@ -1,0 +1,1352 @@
+Parsing...
+...finished (0.00169301s).
+Instantiating...
+    Instantiating variables...
+    ...finished (0.000432014)
+    Instantiating CPFs...
+    ...finished (0.000547886)
+    Instantiating preconditions...
+    ...finished (0.0028441)
+...finished (0.00387001s).
+Simplifying...
+    Simplify formulas (1)...
+    ...finished (0.000871897)
+    Compute inapplicable action fluents (1)...
+    ...finished (0.15276)
+    Simplify formulas (2)...
+    ...finished (0.000355959)
+    Compute inapplicable action fluents (2)...
+    ...finished (0.14726)
+    Compute relevant action fluents (2)...
+    ...finished (3.69549e-05)
+    Determine FDR action fluents (2)...
+    ...finished (0.0194499)
+    Simplify formulas (3)...
+    ...finished (0.000349998)
+    Compute inapplicable action fluents (3)...
+    ...finished (0.0116601)
+    Compute relevant action fluents (3)...
+    ...finished (1.50204e-05)
+    Determine FDR action fluents (3)...
+    ...finished (5.96046e-06)
+    Compute actions (3)...
+    ...finished (0.0841379)
+    Approximate domains (3)...
+    ...finished (0.00698781)
+    Simplify formulas (4)...
+    ...finished (0.000298977)
+    Compute inapplicable action fluents (4)...
+    ...finished (0.010859)
+    Compute relevant action fluents (4)...
+    ...finished (1.50204e-05)
+    Determine FDR action fluents (4)...
+    ...finished (5.00679e-06)
+    Compute actions (4)...
+    ...finished (0.0620661)
+    Approximate domains (4)...
+    ...finished (0.00205684)
+    Simplify formulas (5)...
+    ...finished (0.000264883)
+    Compute inapplicable action fluents (5)...
+    ...finished (0.010392)
+    Compute relevant action fluents (5)...
+    ...finished (1.5974e-05)
+    Determine FDR action fluents (5)...
+    ...finished (6.19888e-06)
+    Compute actions (5)...
+    ...finished (0.050602)
+    Approximate domains (5)...
+    ...finished (0.00133705)
+    Simplify formulas (6)...
+    ...finished (0.000250101)
+    Compute inapplicable action fluents (6)...
+    ...finished (0.010107)
+    Compute relevant action fluents (6)...
+    ...finished (1.19209e-05)
+    Determine FDR action fluents (6)...
+    ...finished (7.15256e-06)
+    Compute actions (6)...
+    ...finished (0.048733)
+    Approximate domains (6)...
+    ...finished (0.000903845)
+    Simplify formulas (7)...
+    ...finished (0.000238895)
+    Compute inapplicable action fluents (7)...
+    ...finished (0.010674)
+    Compute relevant action fluents (7)...
+    ...finished (1.38283e-05)
+    Determine FDR action fluents (7)...
+    ...finished (6.19888e-06)
+    Compute actions (7)...
+    ...finished (0.048435)
+    Approximate domains (7)...
+    ...finished (0.00087595)
+    Initialize action states...
+    ...finished (0.250989)
+...finished (0.933993s).
+Determinizing...
+...finished (1.40667e-05s).
+Generating hash keys...
+    Preparing state hash keys...
+    ...finished (5.4121e-05)
+    Preparing Kleene state hash keys...
+    ...finished (6.91414e-06)
+    Preparing hash keys of evaluatables...
+    ...finished (0.000365973)
+...finished (0.000447989s).
+Precomputing evaluatables...
+...finished (0.00454497s).
+Analyzing task...
+    Determining task properties...
+    ...finished (4.05312e-06)
+    Calculating min and max reward...
+    ...finished (4.05312e-06)
+    Performing random walks...
+    ...finished (0.195826)
+    Creating training set...
+Creating training set with 683 candidates.
+    ...finished (0.000803947)
+...finished (0.196699s).
+Writing output for instance icra2026_instance to ./parser_out_30900 ...
+...finished (0.158742s).
+PROST parser complete running time: 0.158754s
+THTS heuristic IDS: Setting max search depth to: 30
+--------------------------------------------
+>>> STARTING ROUND 1 -- REMAINING TIME 1078s
+--------------------------------------------
+Planning step 1/30 in round 1/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 301620
+
+THTS step statistics:
+  Performed trials: 17434
+  Created search nodes: 253843
+  Search time: 1.000109
+  THTS heuristic IDS step statistics:
+    Number of runs: 6552
+    Average search depth: 22.404151
+Submitted action: goto_waypoint(tiago, registration_desk, social_room) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 2/30 in round 1/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 | 0 0 0 0 1 1 1 1 1 0 0 1 
+Used RAM: 364188
+
+THTS step statistics:
+  Performed trials: 44702
+  Created search nodes: 657150
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 4456
+    Average search depth: 22.280521
+Submitted action: goto_waypoint(tiago, social_room, reading_space_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 3/30 in round 1/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 | 0 1 1 0 0 1 1 1 1 0 0 1 
+Used RAM: 377652
+
+THTS step statistics:
+  Performed trials: 40836
+  Created search nodes: 602450
+  Search time: 1.000010
+  THTS heuristic IDS step statistics:
+    Number of runs: 4680
+    Average search depth: 21.597436
+Submitted action: detect_human(tiago, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 4/30 in round 1/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 | 0 1 1 0 1 0 1 1 1 0 0 1 
+Used RAM: 387420
+
+THTS step statistics:
+  Performed trials: 23337
+  Created search nodes: 341012
+  Search time: 1.000004
+  THTS heuristic IDS step statistics:
+    Number of runs: 6123
+    Average search depth: 21.037400
+Submitted action: approach_human(tiago, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 5/30 in round 1/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 | 0 1 1 0 0 0 0 1 1 0 0 1 
+Used RAM: 407484
+
+THTS step statistics:
+  Performed trials: 20833
+  Created search nodes: 301917
+  Search time: 1.000050
+  THTS heuristic IDS step statistics:
+    Number of runs: 6513
+    Average search depth: 19.893444
+Submitted action: ask_for_book(visitor_2, tiago, book_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 6/30 in round 1/3
+Current state: 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 | 0 1 1 0 1 1 1 0 1 0 0 1 
+Used RAM: 434148
+
+THTS step statistics:
+  Performed trials: 30578
+  Created search nodes: 448886
+  Search time: 1.000007
+  THTS heuristic IDS step statistics:
+    Number of runs: 6252
+    Average search depth: 18.284069
+Submitted action: goto_waypoint(tiago, reading_space_2, bookshelf_space) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 7/30 in round 1/3
+Current state: 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 1 0 0 0 0 | 0 0 1 1 0 1 0 1 1 0 0 1 
+Used RAM: 459228
+
+THTS step statistics:
+  Performed trials: 41990
+  Created search nodes: 612968
+  Search time: 1.000104
+  THTS heuristic IDS step statistics:
+    Number of runs: 5524
+    Average search depth: 17.448769
+Submitted action: fetch_book(tiago, book_2, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 8/30 in round 1/3
+Current state: 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 | 1 1 1 0 1 0 1 1 1 1 0 1 
+Used RAM: 478500
+
+THTS step statistics:
+  Performed trials: 41723
+  Created search nodes: 604399
+  Search time: 1.000056
+  THTS heuristic IDS step statistics:
+    Number of runs: 5824
+    Average search depth: 16.566449
+Submitted action: goto_waypoint(tiago, bookshelf_space, reading_space_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 9/30 in round 1/3
+Current state: 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 1 0 0 | 1 1 1 1 1 0 0 1 1 0 0 1 
+Used RAM: 526548
+
+THTS step statistics:
+  Performed trials: 59197
+  Created search nodes: 861608
+  Search time: 1.000005
+  THTS heuristic IDS step statistics:
+    Number of runs: 6507
+    Average search depth: 15.375288
+Submitted action: deliver_book_without_explanation(tiago, book_2, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 10/30 in round 1/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 | 0 1 1 0 0 1 0 0 1 0 0 1 
+Used RAM: 548460
+
+THTS step statistics:
+  Performed trials: 48751
+  Created search nodes: 716556
+  Search time: 1.000005
+  THTS heuristic IDS step statistics:
+    Number of runs: 8498
+    Average search depth: 14.638503
+Submitted action: goto_waypoint(tiago, reading_space_2, reading_space_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 11/30 in round 1/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 | 0 0 0 0 1 1 1 0 1 0 0 1 
+Used RAM: 593076
+
+THTS step statistics:
+  Performed trials: 66951
+  Created search nodes: 984355
+  Search time: 1.000047
+  THTS heuristic IDS step statistics:
+    Number of runs: 7251
+    Average search depth: 13.799200
+Submitted action: detect_human(tiago, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 12/30 in round 1/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 | 0 1 0 1 0 1 0 1 1 0 0 1 
+Used RAM: 610764
+
+THTS step statistics:
+  Performed trials: 48729
+  Created search nodes: 714484
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 8602
+    Average search depth: 13.174959
+Submitted action: approach_human(tiago, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 13/30 in round 1/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 | 1 1 0 0 0 0 0 1 1 0 0 0 
+Used RAM: 646404
+
+THTS step statistics:
+  Performed trials: 55663
+  Created search nodes: 812469
+  Search time: 1.000045
+  THTS heuristic IDS step statistics:
+    Number of runs: 9484
+    Average search depth: 11.904049
+Submitted action: ask_for_book(visitor_1, tiago, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 14/30 in round 1/3
+Current state: 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 | 0 1 1 0 1 1 0 0 1 1 1 1 
+Used RAM: 693660
+
+THTS step statistics:
+  Performed trials: 77164
+  Created search nodes: 1120829
+  Search time: 1.000006
+  THTS heuristic IDS step statistics:
+    Number of runs: 7296
+    Average search depth: 10.492050
+Submitted action: goto_waypoint(tiago, reading_space_1, bookshelf_space) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 15/30 in round 1/3
+Current state: 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 0 0 | 0 0 0 1 0 0 1 0 1 0 0 0 
+Used RAM: 719532
+
+THTS step statistics:
+  Performed trials: 78515
+  Created search nodes: 1124288
+  Search time: 1.000003
+  THTS heuristic IDS step statistics:
+    Number of runs: 7584
+    Average search depth: 9.152558
+Submitted action: fetch_book(tiago, book_1, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 16/30 in round 1/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 1 0 0 0 0 | 0 0 1 1 0 0 1 0 1 1 0 1 
+Used RAM: 744084
+
+THTS step statistics:
+  Performed trials: 83567
+  Created search nodes: 1153979
+  Search time: 1.000013
+  THTS heuristic IDS step statistics:
+    Number of runs: 6273
+    Average search depth: 8.347362
+Submitted action: goto_waypoint(tiago, bookshelf_space, reading_space_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 17/30 in round 1/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 0 1 1 1 1 1 0 0 1 
+Used RAM: 767316
+
+THTS step statistics:
+  Performed trials: 78955
+  Created search nodes: 1107097
+  Search time: 1.000002
+  THTS heuristic IDS step statistics:
+    Number of runs: 7577
+    Average search depth: 8.005279
+Submitted action: start_explanation_planning(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 18/30 in round 1/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 0 0 0 0 1 1 0 1 1 
+Used RAM: 822492
+
+THTS step statistics:
+  Performed trials: 104613
+  Created search nodes: 1479611
+  Search time: 1.000008
+  THTS heuristic IDS step statistics:
+    Number of runs: 4244
+    Average search depth: 7.899859
+Submitted action: noop()
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 19/30 in round 1/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 1 0 1 0 1 1 1 1 1 0 0 1 
+Used RAM: 831468
+
+THTS step statistics:
+  Performed trials: 73922
+  Created search nodes: 1043621
+  Search time: 1.000042
+  THTS heuristic IDS step statistics:
+    Number of runs: 7947
+    Average search depth: 6.810117
+Submitted action: choose_textual_modality(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 20/30 in round 1/3
+Current state: 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 1 0 1 1 0 0 1 1 1 0 0 1 
+Used RAM: 859188
+
+THTS step statistics:
+  Performed trials: 75630
+  Created search nodes: 1072579
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 8239
+    Average search depth: 5.927176
+Submitted action: choose_global_scope(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 21/30 in round 1/3
+Current state: 1 1 0 0 0 1 1 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 1 1 1 0 0 0 0 1 1 0 1 1 
+Used RAM: 891132
+
+THTS step statistics:
+  Performed trials: 72994
+  Created search nodes: 1029294
+  Search time: 1.000018
+  THTS heuristic IDS step statistics:
+    Number of runs: 9954
+    Average search depth: 4.457705
+Submitted action: choose_narrative_detail(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 22/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 1 0 0 0 1 1 0 0 1 
+Used RAM: 919380
+
+THTS step statistics:
+  Performed trials: 74221
+  Created search nodes: 1044185
+  Search time: 1.000004
+  THTS heuristic IDS step statistics:
+    Number of runs: 8688
+    Average search depth: 3.876727
+Submitted action: end_explanation_planning(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 23/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 0 1 0 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 1 0 0 1 0 0 0 0 1 
+Used RAM: 954756
+
+THTS step statistics:
+  Performed trials: 85155
+  Created search nodes: 1091034
+  Search time: 1.000002
+  THTS heuristic IDS step statistics:
+    Number of runs: 9222
+    Average search depth: 4.467578
+Submitted action: explain(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 24/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 0 1 1 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 1 1 1 1 1 1 1 1 1 0 0 1 
+Used RAM: 989868
+
+THTS step statistics:
+  Performed trials: 97661
+  Created search nodes: 961301
+  Search time: 1.000010
+  THTS heuristic IDS step statistics:
+    Number of runs: 8143
+    Average search depth: 4.541815
+Submitted action: deliver_book(tiago, book_1, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 25/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 | 0 0 0 0 1 1 0 0 1 0 0 1 
+Used RAM: 1009668
+
+THTS step statistics:
+  Performed trials: 117014
+  Created search nodes: 1002856
+  Search time: 1.000008
+  THTS heuristic IDS step statistics:
+    Number of runs: 3543
+    Average search depth: 4.445668
+Submitted action: goto_waypoint(tiago, reading_space_1, registration_desk) 
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 26/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 | 0 1 1 1 0 1 0 1 1 0 0 0 
+Used RAM: 1009668
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 27/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 | 1 1 1 1 0 1 0 0 1 0 0 1 
+Used RAM: 1009668
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 28/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 | 1 0 1 1 1 1 0 1 0 0 0 1 
+Used RAM: 1009668
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 29/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 | 0 0 1 1 0 1 0 1 1 1 0 1 
+Used RAM: 1009668
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 30/30 in round 1/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 1 1 1 0 1 
+Used RAM: 1009668
+
+Policy unique due to optimal last action
+Submitted action: noop()
+Immediate reward: 10.000000
+
+--------------------------------------------
+>>> END OF ROUND 1 -- REWARD RECEIVED: -239940.000000
+----------------------
+THTS round statistics:
+  Entries in probabilistic state value cache: 0
+  Buckets in probabilistic state value cache: 62233
+  Entries in probabilistic applicable actions cache: 174976
+  Buckets in probabilistic applicable actions cache: 520241
+  Number of remaining steps in first solved state: 1
+  Number of trials in first relevant state: 17434
+  Number of search nodes in first relevant state: 253843
+  Number of reward lock states: 0
+  Number of states with only one applicable action: 4
+  UCB1 action selection round statistics:
+    Percentage exploration in first relevant state: 0.793392
+  THTS heuristic IDS round statistics:
+    Entries in deterministic state value cache: 10218
+    Buckets in deterministic state value cache: 520241
+    Entries in deterministic applicable actions cache: 763
+    Buckets in deterministic applicable actions cache: 520241
+    Entries in IDS reward cache: 174976
+    Buckets in IDS reward cache: 520241
+    Average search depth in first relevant state: 22.404151
+    Total number of runs: 174976
+    Total average search depth: 11.606695
+
+--------------------------------------------
+>>> STARTING ROUND 2 -- REMAINING TIME 1051s
+--------------------------------------------
+Planning step 1/30 in round 2/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 1013892
+
+THTS step statistics:
+  Performed trials: 92307
+  Created search nodes: 1341079
+  Search time: 1.000040
+  THTS heuristic IDS step statistics:
+    Number of runs: 2515
+    Average search depth: 22.279125
+Submitted action: goto_waypoint(tiago, registration_desk, reading_space_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 2/30 in round 2/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 | 1 1 0 1 1 0 1 0 1 0 0 1 
+Used RAM: 1018644
+
+THTS step statistics:
+  Performed trials: 88089
+  Created search nodes: 1291031
+  Search time: 1.000007
+  THTS heuristic IDS step statistics:
+    Number of runs: 2257
+    Average search depth: 21.781125
+Submitted action: detect_human(tiago, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 3/30 in round 2/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 | 0 1 1 1 0 0 0 0 1 0 0 1 
+Used RAM: 1021284
+
+THTS step statistics:
+  Performed trials: 67238
+  Created search nodes: 986932
+  Search time: 1.000043
+  THTS heuristic IDS step statistics:
+    Number of runs: 4150
+    Average search depth: 21.178313
+Submitted action: approach_human(tiago, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 4/30 in round 2/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 | 0 0 1 0 0 1 0 0 1 0 0 1 
+Used RAM: 1036068
+
+THTS step statistics:
+  Performed trials: 69885
+  Created search nodes: 1020049
+  Search time: 1.000002
+  THTS heuristic IDS step statistics:
+    Number of runs: 4199
+    Average search depth: 20.209097
+Submitted action: ask_for_book(visitor_2, tiago, book_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 5/30 in round 2/3
+Current state: 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 | 0 1 1 1 1 1 0 1 1 0 0 1 
+Used RAM: 1050324
+
+THTS step statistics:
+  Performed trials: 87041
+  Created search nodes: 1261928
+  Search time: 1.000006
+  THTS heuristic IDS step statistics:
+    Number of runs: 2644
+    Average search depth: 18.248487
+Submitted action: goto_waypoint(tiago, reading_space_2, bookshelf_space) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 6/30 in round 2/3
+Current state: 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 1 0 0 0 0 | 0 0 0 1 1 0 0 1 1 0 0 1 
+Used RAM: 1061412
+
+THTS step statistics:
+  Performed trials: 95303
+  Created search nodes: 1379735
+  Search time: 1.000002
+  THTS heuristic IDS step statistics:
+    Number of runs: 1795
+    Average search depth: 17.856825
+Submitted action: fetch_book(tiago, book_2, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 7/30 in round 2/3
+Current state: 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 | 1 0 1 0 1 1 1 1 1 0 0 1 
+Used RAM: 1070124
+
+THTS step statistics:
+  Performed trials: 96200
+  Created search nodes: 1371567
+  Search time: 1.000017
+  THTS heuristic IDS step statistics:
+    Number of runs: 1891
+    Average search depth: 16.717081
+Submitted action: goto_waypoint(tiago, bookshelf_space, reading_space_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 8/30 in round 2/3
+Current state: 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 1 0 0 | 0 1 0 0 0 1 1 0 1 0 0 1 
+Used RAM: 1076724
+
+THTS step statistics:
+  Performed trials: 97721
+  Created search nodes: 1407445
+  Search time: 1.000006
+  THTS heuristic IDS step statistics:
+    Number of runs: 1527
+    Average search depth: 15.925344
+Submitted action: deliver_book_without_explanation(tiago, book_2, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 9/30 in round 2/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 | 0 1 1 1 1 0 0 1 1 1 0 1 
+Used RAM: 1080420
+
+THTS step statistics:
+  Performed trials: 78495
+  Created search nodes: 1147844
+  Search time: 1.000008
+  THTS heuristic IDS step statistics:
+    Number of runs: 3497
+    Average search depth: 14.768659
+Submitted action: goto_waypoint(tiago, reading_space_2, reading_space_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 10/30 in round 2/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 | 1 1 1 0 1 1 0 1 1 0 0 1 
+Used RAM: 1090452
+
+THTS step statistics:
+  Performed trials: 93324
+  Created search nodes: 1362868
+  Search time: 1.000031
+  THTS heuristic IDS step statistics:
+    Number of runs: 1768
+    Average search depth: 14.100679
+Submitted action: detect_human(tiago, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 11/30 in round 2/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 | 0 1 1 0 1 1 1 0 1 0 0 1 
+Used RAM: 1097844
+
+THTS step statistics:
+  Performed trials: 83676
+  Created search nodes: 1219740
+  Search time: 1.000012
+  THTS heuristic IDS step statistics:
+    Number of runs: 3168
+    Average search depth: 13.543245
+Submitted action: approach_human(tiago, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 12/30 in round 2/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 | 0 0 1 0 0 0 0 1 1 0 0 1 
+Used RAM: 1106820
+
+THTS step statistics:
+  Performed trials: 86470
+  Created search nodes: 1251869
+  Search time: 1.000008
+  THTS heuristic IDS step statistics:
+    Number of runs: 2663
+    Average search depth: 12.547127
+Submitted action: ask_for_book(visitor_1, tiago, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 13/30 in round 2/3
+Current state: 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 | 0 1 1 1 0 0 1 1 0 0 0 1 
+Used RAM: 1118436
+
+THTS step statistics:
+  Performed trials: 100673
+  Created search nodes: 1451120
+  Search time: 1.000005
+  THTS heuristic IDS step statistics:
+    Number of runs: 1651
+    Average search depth: 10.746214
+Submitted action: goto_waypoint(tiago, reading_space_1, bookshelf_space) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 14/30 in round 2/3
+Current state: 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 0 0 | 0 1 1 0 0 0 1 0 1 0 0 0 
+Used RAM: 1126620
+
+THTS step statistics:
+  Performed trials: 101738
+  Created search nodes: 1445151
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 1605
+    Average search depth: 9.693458
+Submitted action: fetch_book(tiago, book_1, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 15/30 in round 2/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 1 0 0 0 0 | 0 0 1 0 1 1 1 1 1 0 0 1 
+Used RAM: 1132692
+
+THTS step statistics:
+  Performed trials: 105431
+  Created search nodes: 1446605
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 1203
+    Average search depth: 8.713217
+Submitted action: goto_waypoint(tiago, bookshelf_space, reading_space_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 16/30 in round 2/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 1 1 1 0 0 0 0 0 1 0 0 1 
+Used RAM: 1138500
+
+THTS step statistics:
+  Performed trials: 107740
+  Created search nodes: 1494717
+  Search time: 1.000008
+  THTS heuristic IDS step statistics:
+    Number of runs: 1032
+    Average search depth: 8.338178
+Submitted action: start_explanation_planning(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 17/30 in round 2/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 0 1 0 1 1 1 0 1 1 
+Used RAM: 1142988
+
+THTS step statistics:
+  Performed trials: 101856
+  Created search nodes: 1419920
+  Search time: 1.000005
+  THTS heuristic IDS step statistics:
+    Number of runs: 2006
+    Average search depth: 7.172483
+Submitted action: choose_textual_modality(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 18/30 in round 2/3
+Current state: 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 1 1 0 0 1 1 1 1 1 0 0 1 
+Used RAM: 1149588
+
+THTS step statistics:
+  Performed trials: 100992
+  Created search nodes: 1414411
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 2503
+    Average search depth: 6.353975
+Submitted action: choose_global_scope(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 19/30 in round 2/3
+Current state: 1 1 0 0 0 1 1 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 1 1 0 0 1 0 0 0 1 0 0 0 
+Used RAM: 1156452
+
+THTS step statistics:
+  Performed trials: 98072
+  Created search nodes: 1364979
+  Search time: 1.000006
+  THTS heuristic IDS step statistics:
+    Number of runs: 2634
+    Average search depth: 4.839787
+Submitted action: choose_narrative_detail(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 20/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 1 0 1 0 1 0 0 0 1 
+Used RAM: 1161996
+
+THTS step statistics:
+  Performed trials: 96589
+  Created search nodes: 1352127
+  Search time: 1.000007
+  THTS heuristic IDS step statistics:
+    Number of runs: 1932
+    Average search depth: 3.914079
+Submitted action: end_explanation_planning(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 21/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 0 1 0 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 0 1 0 1 0 1 0 0 1 
+Used RAM: 1168332
+
+THTS step statistics:
+  Performed trials: 100914
+  Created search nodes: 1287027
+  Search time: 1.000010
+  THTS heuristic IDS step statistics:
+    Number of runs: 1561
+    Average search depth: 4.336963
+Submitted action: explain(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 22/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 0 1 1 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 0 1 0 1 1 1 0 0 1 
+Used RAM: 1177572
+
+THTS step statistics:
+  Performed trials: 107752
+  Created search nodes: 1053858
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 2050
+    Average search depth: 5.241463
+Submitted action: deliver_book(tiago, book_1, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 23/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 | 1 1 1 1 1 0 0 1 1 0 0 1 
+Used RAM: 1185492
+
+THTS step statistics:
+  Performed trials: 114620
+  Created search nodes: 986078
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 1464
+    Average search depth: 6.459699
+Submitted action: goto_waypoint(tiago, reading_space_1, social_room) 
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 24/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 | 0 0 1 0 1 0 1 1 1 0 0 0 
+Used RAM: 1185492
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 25/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 | 0 1 1 0 1 0 0 1 1 0 0 1 
+Used RAM: 1185492
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 26/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 | 1 1 1 0 0 0 0 1 1 0 0 0 
+Used RAM: 1185492
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 27/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 | 0 0 1 1 1 1 1 1 1 0 0 1 
+Used RAM: 1185492
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 28/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 | 0 1 1 1 1 0 0 1 1 0 0 1 
+Used RAM: 1185492
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 29/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 | 0 0 1 0 1 1 1 0 1 0 0 1 
+Used RAM: 1185492
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 30/30 in round 2/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 | 0 1 0 0 1 1 1 0 1 0 0 1 
+Used RAM: 1185492
+
+Policy unique due to optimal last action
+Submitted action: noop()
+Immediate reward: 10.000000
+
+--------------------------------------------
+>>> END OF ROUND 2 -- REWARD RECEIVED: -219920.000000
+----------------------
+THTS round statistics:
+  Entries in probabilistic state value cache: 0
+  Buckets in probabilistic state value cache: 62233
+  Entries in probabilistic applicable actions cache: 226691
+  Buckets in probabilistic applicable actions cache: 520241
+  Number of remaining steps in first solved state: 1
+  Number of trials in first relevant state: 92307
+  Number of search nodes in first relevant state: 1341079
+  Number of reward lock states: 0
+  Number of states with only one applicable action: 6
+  UCB1 action selection round statistics:
+    Percentage exploration in first relevant state: 0.789637
+  THTS heuristic IDS round statistics:
+    Entries in deterministic state value cache: 10218
+    Buckets in deterministic state value cache: 520241
+    Entries in deterministic applicable actions cache: 763
+    Buckets in deterministic applicable actions cache: 520241
+    Entries in IDS reward cache: 226691
+    Buckets in IDS reward cache: 520241
+    Average search depth in first relevant state: 22.279125
+    Total number of runs: 51715
+    Total average search depth: 13.478236
+
+--------------------------------------------
+>>> STARTING ROUND 3 -- REMAINING TIME 1024s
+--------------------------------------------
+Planning step 1/30 in round 3/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 | 0 0 0 0 0 0 0 0 0 0 0 0 
+Used RAM: 1187868
+
+THTS step statistics:
+  Performed trials: 97878
+  Created search nodes: 1418538
+  Search time: 1.000008
+  THTS heuristic IDS step statistics:
+    Number of runs: 1140
+    Average search depth: 22.210526
+Submitted action: goto_waypoint(tiago, registration_desk, reading_space_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 2/30 in round 3/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 | 0 0 1 1 0 0 0 0 0 0 0 1 
+Used RAM: 1191036
+
+THTS step statistics:
+  Performed trials: 97502
+  Created search nodes: 1424604
+  Search time: 1.000088
+  THTS heuristic IDS step statistics:
+    Number of runs: 1099
+    Average search depth: 21.865332
+Submitted action: detect_human(tiago, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 3/30 in round 3/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 | 0 0 1 0 0 0 0 1 1 0 0 1 
+Used RAM: 1192884
+
+THTS step statistics:
+  Performed trials: 85626
+  Created search nodes: 1250695
+  Search time: 1.000003
+  THTS heuristic IDS step statistics:
+    Number of runs: 2262
+    Average search depth: 21.203802
+Submitted action: approach_human(tiago, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 4/30 in round 3/3
+Current state: 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 | 1 1 0 1 0 0 0 0 1 0 0 1 
+Used RAM: 1197900
+
+THTS step statistics:
+  Performed trials: 85514
+  Created search nodes: 1244249
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 2073
+    Average search depth: 20.207429
+Submitted action: ask_for_book(visitor_2, tiago, book_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 5/30 in round 3/3
+Current state: 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 | 0 1 0 0 0 0 0 1 1 0 0 1 
+Used RAM: 1205556
+
+THTS step statistics:
+  Performed trials: 96426
+  Created search nodes: 1394891
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 1153
+    Average search depth: 18.159584
+Submitted action: goto_waypoint(tiago, reading_space_2, bookshelf_space) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 6/30 in round 3/3
+Current state: 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 1 0 0 0 0 | 0 1 1 0 0 0 1 1 1 0 1 1 
+Used RAM: 1211100
+
+THTS step statistics:
+  Performed trials: 98577
+  Created search nodes: 1425040
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 826
+    Average search depth: 17.946731
+Submitted action: fetch_book(tiago, book_2, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 7/30 in round 3/3
+Current state: 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 | 1 1 1 0 1 1 1 1 1 0 0 1 
+Used RAM: 1215852
+
+THTS step statistics:
+  Performed trials: 101689
+  Created search nodes: 1447327
+  Search time: 1.000006
+  THTS heuristic IDS step statistics:
+    Number of runs: 779
+    Average search depth: 16.738126
+Submitted action: goto_waypoint(tiago, bookshelf_space, reading_space_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 8/30 in round 3/3
+Current state: 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 1 0 0 | 1 1 1 1 1 0 0 1 1 0 0 1 
+Used RAM: 1219548
+
+THTS step statistics:
+  Performed trials: 102045
+  Created search nodes: 1468068
+  Search time: 1.000003
+  THTS heuristic IDS step statistics:
+    Number of runs: 732
+    Average search depth: 16.010929
+Submitted action: deliver_book_without_explanation(tiago, book_2, visitor_2) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 9/30 in round 3/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 | 0 0 1 1 1 1 1 1 1 0 0 1 
+Used RAM: 1221660
+
+THTS step statistics:
+  Performed trials: 90350
+  Created search nodes: 1319555
+  Search time: 1.000004
+  THTS heuristic IDS step statistics:
+    Number of runs: 2155
+    Average search depth: 14.742923
+Submitted action: goto_waypoint(tiago, reading_space_2, reading_space_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 10/30 in round 3/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 | 0 1 1 1 1 0 1 0 1 0 0 1 
+Used RAM: 1227468
+
+THTS step statistics:
+  Performed trials: 99652
+  Created search nodes: 1452013
+  Search time: 1.000005
+  THTS heuristic IDS step statistics:
+    Number of runs: 942
+    Average search depth: 14.213376
+Submitted action: detect_human(tiago, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 11/30 in round 3/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 | 0 1 0 1 1 0 1 0 1 0 0 0 
+Used RAM: 1230372
+
+THTS step statistics:
+  Performed trials: 91286
+  Created search nodes: 1328767
+  Search time: 1.000007
+  THTS heuristic IDS step statistics:
+    Number of runs: 1718
+    Average search depth: 13.576834
+Submitted action: approach_human(tiago, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 12/30 in round 3/3
+Current state: 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 | 1 0 1 0 0 0 1 0 0 0 1 1 
+Used RAM: 1236180
+
+THTS step statistics:
+  Performed trials: 95381
+  Created search nodes: 1377394
+  Search time: 1.000022
+  THTS heuristic IDS step statistics:
+    Number of runs: 1552
+    Average search depth: 12.604381
+Submitted action: ask_for_book(visitor_1, tiago, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 13/30 in round 3/3
+Current state: 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 | 0 1 1 1 1 0 1 0 1 0 0 1 
+Used RAM: 1242252
+
+THTS step statistics:
+  Performed trials: 102629
+  Created search nodes: 1477331
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 854
+    Average search depth: 10.729508
+Submitted action: goto_waypoint(tiago, reading_space_1, bookshelf_space) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 14/30 in round 3/3
+Current state: 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 0 0 | 0 1 1 0 1 1 1 0 1 0 0 1 
+Used RAM: 1246740
+
+THTS step statistics:
+  Performed trials: 103899
+  Created search nodes: 1470871
+  Search time: 1.000011
+  THTS heuristic IDS step statistics:
+    Number of runs: 797
+    Average search depth: 9.720201
+Submitted action: fetch_book(tiago, book_1, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 15/30 in round 3/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 1 0 0 0 0 | 0 0 0 0 0 0 0 1 1 0 0 1 
+Used RAM: 1248588
+
+THTS step statistics:
+  Performed trials: 102629
+  Created search nodes: 1409163
+  Search time: 1.000005
+  THTS heuristic IDS step statistics:
+    Number of runs: 596
+    Average search depth: 8.714765
+Submitted action: goto_waypoint(tiago, bookshelf_space, reading_space_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 16/30 in round 3/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 0 1 0 0 1 1 0 0 1 
+Used RAM: 1253076
+
+THTS step statistics:
+  Performed trials: 108572
+  Created search nodes: 1507025
+  Search time: 1.000010
+  THTS heuristic IDS step statistics:
+    Number of runs: 677
+    Average search depth: 8.231905
+Submitted action: start_explanation_planning(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 17/30 in round 3/3
+Current state: 1 1 0 0 0 0 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 0 0 1 0 1 1 0 1 0 1 
+Used RAM: 1256508
+
+THTS step statistics:
+  Performed trials: 106081
+  Created search nodes: 1479574
+  Search time: 1.000006
+  THTS heuristic IDS step statistics:
+    Number of runs: 1114
+    Average search depth: 7.230700
+Submitted action: choose_textual_modality(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 18/30 in round 3/3
+Current state: 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 0 0 0 0 0 0 1 0 0 1 
+Used RAM: 1258620
+
+THTS step statistics:
+  Performed trials: 99979
+  Created search nodes: 1401391
+  Search time: 1.000002
+  THTS heuristic IDS step statistics:
+    Number of runs: 1368
+    Average search depth: 6.292398
+Submitted action: choose_global_scope(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 19/30 in round 3/3
+Current state: 1 1 0 0 0 1 1 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 0 1 1 1 0 1 0 1 0 0 1 
+Used RAM: 1262316
+
+THTS step statistics:
+  Performed trials: 100591
+  Created search nodes: 1399640
+  Search time: 1.000004
+  THTS heuristic IDS step statistics:
+    Number of runs: 1391
+    Average search depth: 4.939612
+Submitted action: choose_summary_detail(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 20/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 0 0 1 0 0 1 1 0 0 1 
+Used RAM: 1267068
+
+THTS step statistics:
+  Performed trials: 104170
+  Created search nodes: 1457224
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 1139
+    Average search depth: 3.990342
+Submitted action: end_explanation_planning(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 21/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 0 1 0 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 1 1 1 1 0 1 0 0 1 
+Used RAM: 1270500
+
+THTS step statistics:
+  Performed trials: 104233
+  Created search nodes: 1327938
+  Search time: 1.000004
+  THTS heuristic IDS step statistics:
+    Number of runs: 901
+    Average search depth: 4.158713
+Submitted action: explain(tiago, visitor_1, book_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 22/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 0 1 1 1 1 1 0 1 0 1 0 0 0 0 0 1 0 0 0 | 0 1 1 0 1 0 1 0 1 0 0 1 
+Used RAM: 1275516
+
+THTS step statistics:
+  Performed trials: 107477
+  Created search nodes: 1052513
+  Search time: 1.000013
+  THTS heuristic IDS step statistics:
+    Number of runs: 1131
+    Average search depth: 4.823165
+Submitted action: deliver_book(tiago, book_1, visitor_1) 
+Immediate reward: -10000.000000
+--------------------------------------------
+Planning step 23/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 | 0 1 0 1 1 1 1 1 1 0 0 1 
+Used RAM: 1280268
+
+THTS step statistics:
+  Performed trials: 113753
+  Created search nodes: 979379
+  Search time: 1.000009
+  THTS heuristic IDS step statistics:
+    Number of runs: 749
+    Average search depth: 6.445928
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 24/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 | 1 0 0 0 1 1 0 1 1 0 0 1 
+Used RAM: 1280268
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 25/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 | 1 0 1 0 0 1 1 1 1 0 0 0 
+Used RAM: 1280268
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 26/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 | 0 0 1 0 0 0 1 0 1 0 0 1 
+Used RAM: 1280268
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 27/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 | 1 1 0 0 0 0 1 1 0 0 0 1 
+Used RAM: 1280268
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 28/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 | 1 1 1 1 0 0 0 1 1 0 1 1 
+Used RAM: 1280268
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 29/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 | 0 1 1 0 1 1 0 1 1 1 0 1 
+Used RAM: 1280268
+
+Policy unique due to single reasonable action
+Submitted action: noop()
+Immediate reward: 10.000000
+--------------------------------------------
+Planning step 30/30 in round 3/3
+Current state: 1 1 0 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 | 1 0 0 0 1 0 0 1 1 0 0 1 
+Used RAM: 1280268
+
+Policy unique due to optimal last action
+Submitted action: noop()
+Immediate reward: 10.000000
+
+--------------------------------------------
+>>> END OF ROUND 3 -- REWARD RECEIVED: -219920.000000
+----------------------
+THTS round statistics:
+  Entries in probabilistic state value cache: 0
+  Buckets in probabilistic state value cache: 62233
+  Entries in probabilistic applicable actions cache: 253839
+  Buckets in probabilistic applicable actions cache: 520241
+  Number of remaining steps in first solved state: 1
+  Number of trials in first relevant state: 97878
+  Number of search nodes in first relevant state: 1418538
+  Number of reward lock states: 0
+  Number of states with only one applicable action: 6
+  UCB1 action selection round statistics:
+    Percentage exploration in first relevant state: 0.788574
+  THTS heuristic IDS round statistics:
+    Entries in deterministic state value cache: 10218
+    Buckets in deterministic state value cache: 520241
+    Entries in deterministic applicable actions cache: 763
+    Buckets in deterministic applicable actions cache: 520241
+    Entries in IDS reward cache: 253839
+    Buckets in IDS reward cache: 520241
+    Average search depth in first relevant state: 22.210526
+    Total number of runs: 27148
+    Total average search depth: 13.170657
+
+
+--------------------------------------------
+>>> END OF SESSION  -- TOTAL REWARD: -679780.000000
+>>> END OF SESSION  -- AVERAGE REWARD: -226593.333333
+PROST complete running time: 81.895301
+./search-release icra2026_instance "[Prost -s 1 -se [IPC2014]]"

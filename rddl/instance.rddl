@@ -1,0 +1,169 @@
+non-fluents nf_icra2026 {
+	domain = icra2026;
+        objects {
+                robot: {tiago};
+		human: {visitor_1, visitor_2};
+                book: {book_1, book_2};
+                waypoint: {registration_desk, reading_space_1, reading_space_2, bookshelf_space, social_room};
+                // zone: {no_hold_zone, quiet_zone_1, quiet_zone_2, social_zone};                
+                situation: { normal_success, agent_error, uncertainty, inability, suboptimal, norm_violation, unforeseen };
+                response_type: { apology, why_expl, what_expl, next_action, ask_for_help, continue_resp };
+	};
+	
+	non-fluents {
+	        // visitors
+                human_at(visitor_1, reading_space_1);
+                human_at(visitor_2, reading_space_2);
+                // human_at(visitor_3, social_room);
+                // human_at(visitor_4, bookshelf_space);
+                // human_at(visitor_5, social_room);
+
+                wants_book(visitor_1, book_1);
+                wants_book(visitor_2, book_2);
+                // wants_book(visitor_3, book_3);
+                // wants_book(visitor_4, book_4);
+                // wants_book(visitor_5, book_5);
+
+                // visitor_1
+                expl_prob(visitor_1) = 1.0;                
+                // modality
+                visual_modality_prob(visitor_1) = 0.4;
+                textual_modality_prob(visitor_1) = 0.6;
+                // scope
+                local_scope_prob(visitor_1) = 0.1;
+                global_scope_prob(visitor_1) = 0.9;
+                // detail level
+                summary_detail_prob(visitor_1) = 0.7;
+                narrative_detail_prob(visitor_1) = 0.3;
+                
+                // visitor_2
+                expl_prob(visitor_2) = 0.0;
+                // modality                
+                visual_modality_prob(visitor_2) = 0.6;
+                textual_modality_prob(visitor_2) = 0.4;
+                // scope
+                local_scope_prob(visitor_2) = 0.9;
+                global_scope_prob(visitor_2) = 0.1;
+                // detail level
+                summary_detail_prob(visitor_2) = 0.3;
+                narrative_detail_prob(visitor_2) = 0.7;
+
+
+                // visitor_3
+                // expl_prob(visitor_3) = 0.5;                
+                // modality 
+                // visual_modality_prob(visitor_3) = 0.5;
+                // textual_modality_prob(visitor_3) = 0.5;
+                // scope
+                // local_scope_prob(visitor_3) = 0.5;
+                // global_scope_prob(visitor_3) = 0.5;
+                // detail level
+                // summary_detail_prob(visitor_3) = 0.5;
+                // narrative_detail_prob(visitor_3) = 0.5;
+                
+
+                // visitor_4
+                // expl_prob(visitor_4) = 0.7;
+                // modality                
+                // visual_modality_prob(visitor_4) = 0.8;
+                // textual_modality_prob(visitor_4) = 0.2;
+                // scope
+                // local_scope_prob(visitor_4) = 0.9;
+                // global_scope_prob(visitor_4) = 0.1;
+                // detail level
+                // summary_detail_prob(visitor_4) = 0.4;
+                // narrative_detail_prob(visitor_4) = 0.6;
+                
+                
+                // visitor_5
+                // expl_prob(visitor_5) = 0.3;                
+                // modality 
+                // visual_modality_prob(visitor_5) = 0.1;
+                // textual_modality_prob(visitor_5) = 0.9;
+                // scope
+                // local_scope_prob(visitor_5) = 0.49;
+                // global_scope_prob(visitor_5) = 0.51;
+                // detail level
+                // summary_detail_prob(visitor_5) = 0.45;
+                // narrative_detail_prob(visitor_5) = 0.55;
+                // === Situation → Response-Type priors from study ===
+                p_resp_apology(normal_success) = 0.110000;
+                p_resp_why_expl(normal_success) = 0.130000;
+                p_resp_what_expl(normal_success) = 0.150000;
+                p_resp_next_action(normal_success) = 0.160000;
+                p_resp_ask_for_help(normal_success) = 0.120000;
+                p_resp_continue_resp(normal_success) = 0.330000;
+                p_resp_apology(agent_error) = 0.210000;
+                p_resp_why_expl(agent_error) = 0.200000;
+                p_resp_what_expl(agent_error) = 0.170000;
+                p_resp_next_action(agent_error) = 0.180000;
+                p_resp_ask_for_help(agent_error) = 0.170000;
+                p_resp_continue_resp(agent_error) = 0.070000;
+                p_resp_apology(uncertainty) = 0.120000;
+                p_resp_why_expl(uncertainty) = 0.190000;
+                p_resp_what_expl(uncertainty) = 0.160000;
+                p_resp_next_action(uncertainty) = 0.190000;
+                p_resp_ask_for_help(uncertainty) = 0.240000;
+                p_resp_continue_resp(uncertainty) = 0.100000;
+                p_resp_apology(inability) = 0.140000;
+                p_resp_why_expl(inability) = 0.210000;
+                p_resp_what_expl(inability) = 0.180000;
+                p_resp_next_action(inability) = 0.170000;
+                p_resp_ask_for_help(inability) = 0.210000;
+                p_resp_continue_resp(inability) = 0.090000;
+                p_resp_apology(suboptimal) = 0.100000;
+                p_resp_why_expl(suboptimal) = 0.200000;
+                p_resp_what_expl(suboptimal) = 0.190000;
+                p_resp_next_action(suboptimal) = 0.180000;
+                p_resp_ask_for_help(suboptimal) = 0.120000;
+                p_resp_continue_resp(suboptimal) = 0.210000;
+                p_resp_apology(norm_violation) = 0.210000;
+                p_resp_why_expl(norm_violation) = 0.220000;
+                p_resp_what_expl(norm_violation) = 0.170000;
+                p_resp_next_action(norm_violation) = 0.160000;
+                p_resp_ask_for_help(norm_violation) = 0.110000;
+                p_resp_continue_resp(norm_violation) = 0.130000;
+                p_resp_apology(unforeseen) = 0.110000;
+                p_resp_why_expl(unforeseen) = 0.230000;
+                p_resp_what_expl(unforeseen) = 0.220000;
+                p_resp_next_action(unforeseen) = 0.180000;
+                p_resp_ask_for_help(unforeseen) = 0.200000;
+                p_resp_continue_resp(unforeseen) = 0.060000;
+
+	};
+}
+
+instance icra2026_instance {
+	domain = icra2026;
+	non-fluents = nf_icra2026;
+	
+        init-state {
+                robot_at(tiago, registration_desk);
+
+                // books
+                book_at(book_1, bookshelf_space);
+                book_at(book_2, bookshelf_space);
+                // book_at(book_3, bookshelf_space);
+
+                // --- Situation flags per human (one-hot) ---
+                is_normal_success(visitor_1) = false;
+                is_agent_error(visitor_1) = true;
+                is_uncertainty(visitor_1) = false;
+                is_inability(visitor_1) = false;
+                is_suboptimal(visitor_1) = false;
+                is_norm_violation(visitor_1) = false;
+                is_unforeseen(visitor_1) = false;
+                is_normal_success(visitor_2) = false;
+                is_agent_error(visitor_2) = false;
+                is_uncertainty(visitor_2) = true;
+                is_inability(visitor_2) = false;
+                is_suboptimal(visitor_2) = false;
+                is_norm_violation(visitor_2) = false;
+                is_unforeseen(visitor_2) = false;
+
+	};
+
+	max-nondef-actions = 1;
+	horizon  = 30;
+	discount = 1.0;
+}

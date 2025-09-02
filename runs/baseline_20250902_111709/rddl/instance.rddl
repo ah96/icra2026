@@ -1,0 +1,106 @@
+non-fluents nf_icra2026 {
+	domain = icra2026;
+        objects {
+                robot: {tiago};
+		human: {visitor_1, visitor_2};
+                book: {book_1, book_2};
+                waypoint: {registration_desk, reading_space_1, reading_space_2, bookshelf_space, social_room};
+                // zone: {no_hold_zone, quiet_zone_1, quiet_zone_2, social_zone};
+	};
+	
+	non-fluents {
+	        // visitors
+                human_at(visitor_1, reading_space_1);
+                human_at(visitor_2, reading_space_2);
+                // human_at(visitor_3, social_room);
+                // human_at(visitor_4, bookshelf_space);
+                // human_at(visitor_5, social_room);
+
+                wants_book(visitor_1, book_1);
+                wants_book(visitor_2, book_2);
+                // wants_book(visitor_3, book_3);
+                // wants_book(visitor_4, book_4);
+                // wants_book(visitor_5, book_5);
+
+                // visitor_1
+                expl_prob(visitor_1) = 1.0;                
+                // modality
+                visual_modality_prob(visitor_1) = 0.4;
+                textual_modality_prob(visitor_1) = 0.6;
+                // scope
+                local_scope_prob(visitor_1) = 0.1;
+                global_scope_prob(visitor_1) = 0.9;
+                // detail level
+                summary_detail_prob(visitor_1) = 0.7;
+                narrative_detail_prob(visitor_1) = 0.3;
+                
+                // visitor_2
+                expl_prob(visitor_2) = 0.0;
+                // modality                
+                visual_modality_prob(visitor_2) = 0.6;
+                textual_modality_prob(visitor_2) = 0.4;
+                // scope
+                local_scope_prob(visitor_2) = 0.9;
+                global_scope_prob(visitor_2) = 0.1;
+                // detail level
+                summary_detail_prob(visitor_2) = 0.3;
+                narrative_detail_prob(visitor_2) = 0.7;
+
+
+                // visitor_3
+                // expl_prob(visitor_3) = 0.5;                
+                // modality 
+                // visual_modality_prob(visitor_3) = 0.5;
+                // textual_modality_prob(visitor_3) = 0.5;
+                // scope
+                // local_scope_prob(visitor_3) = 0.5;
+                // global_scope_prob(visitor_3) = 0.5;
+                // detail level
+                // summary_detail_prob(visitor_3) = 0.5;
+                // narrative_detail_prob(visitor_3) = 0.5;
+                
+
+                // visitor_4
+                // expl_prob(visitor_4) = 0.7;
+                // modality                
+                // visual_modality_prob(visitor_4) = 0.8;
+                // textual_modality_prob(visitor_4) = 0.2;
+                // scope
+                // local_scope_prob(visitor_4) = 0.9;
+                // global_scope_prob(visitor_4) = 0.1;
+                // detail level
+                // summary_detail_prob(visitor_4) = 0.4;
+                // narrative_detail_prob(visitor_4) = 0.6;
+                
+                
+                // visitor_5
+                // expl_prob(visitor_5) = 0.3;                
+                // modality 
+                // visual_modality_prob(visitor_5) = 0.1;
+                // textual_modality_prob(visitor_5) = 0.9;
+                // scope
+                // local_scope_prob(visitor_5) = 0.49;
+                // global_scope_prob(visitor_5) = 0.51;
+                // detail level
+                // summary_detail_prob(visitor_5) = 0.45;
+                // narrative_detail_prob(visitor_5) = 0.55;
+	};
+}
+
+instance icra2026_instance {
+	domain = icra2026;
+	non-fluents = nf_icra2026;
+	
+        init-state {
+                robot_at(tiago, registration_desk);
+
+                // books
+                book_at(book_1, bookshelf_space);
+                book_at(book_2, bookshelf_space);
+                // book_at(book_3, bookshelf_space);
+	};
+
+	max-nondef-actions = 1;
+	horizon  = 30;
+	discount = 1.0;
+}
