@@ -18,3 +18,41 @@
 <round-end><instance-name>icra2026_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-219920.0</round-reward><turns-used>30</turns-used><time-left>998209</time-left><immediate-reward>10.0</immediate-reward></round-end>
 <?xml version="1.0" encoding="UTF-8"?>
 <session-end><instance-name>icra2026_instance</instance-name><total-reward>-679780.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>998207</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>

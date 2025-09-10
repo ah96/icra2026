@@ -1,12 +1,33 @@
 Loading: ./rddl/instance.rddl
 Loading: ./rddl/domain.rddl
-java.net.BindException: Address already in use
-java.net.BindException: Address already in use
-	at java.base/sun.nio.ch.Net.bind0(Native Method)
-	at java.base/sun.nio.ch.Net.bind(Net.java:555)
-	at java.base/sun.nio.ch.Net.bind(Net.java:544)
-	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:648)
-	at java.base/java.net.ServerSocket.bind(ServerSocket.java:388)
-	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:274)
-	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:167)
-	at rddl.competition.Server.main(Server.java:194)
+RDDL Server Initialized
+Connection from client at address localhost / 127.0.0.1
+Client name: prost
+Instance requested: icra2026_instance
+[Fatal Error] :-1:-1: Premature end of file.
+org.xml.sax.SAXParseException; Premature end of file.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at rddl.competition.Server.processXMLRoundRequest(Server.java:846)
+	at rddl.competition.Server.run(Server.java:300)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+[Fatal Error] :-1:-1: Premature end of file.
+org.xml.sax.SAXParseException; Premature end of file.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at rddl.competition.Server.processXMLRoundRequest(Server.java:846)
+	at rddl.competition.Server.run(Server.java:300)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+java.net.SocketException: Broken pipe
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:425)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:445)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:831)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1035)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:320)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:160)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:248)
+	at rddl.competition.Server.sendOneMessage(Server.java:709)
+	at rddl.competition.Server.run(Server.java:303)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+>> TERMINATING TRIAL.
