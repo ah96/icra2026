@@ -2,7 +2,7 @@ non-fluents nf_icra2026 {
 	domain = icra2026;
         objects {
                 robot: {tiago};
-		        human: {visitor_1, visitor_2};
+                human: {visitor_1, visitor_2};
                 book: {book_1, book_2};
                 waypoint: {hallway, registration_desk, reading_space_1, reading_space_2, bookshelf_space, social_room};
                 situation: {normal_success, agent_error, uncertainty, inability, suboptimal, norm_violation, unforeseen};
@@ -14,15 +14,23 @@ non-fluents nf_icra2026 {
                 // --- Humans
                 human_at(visitor_1, reading_space_1);
                 human_at(visitor_2, reading_space_2);
+                human_wants_book(visitor_1, book_1)
+                human_wants_book(visitor_2, book_2)
 
                 // --- Situation flags per robot-human
-                is_situation(tiago, visitor_1, agent_error);                
-                is_situation(tiago, visitor_2, uncertainty);
+                is_active_situation(tiago, visitor_1, agent_error);                
+                is_active_situation(tiago, visitor_2, uncertainty);
 
                 // === Which response types are "explanations" (internal variable) ===
                 is_explanation_type(why_expl);
                 is_explanation_type(what_expl);
                 // all others default to false (apology, next_action, ask_for_help, continue)
+
+                // === Which situation results in fetching a book ===
+                situation_allows_fetching(normal_success);
+                situation_allows_fetching(suboptimal);
+                situation_allows_fetching(norm_violation);
+                // all other situations default to false
 
                 // === Waypoint Topology (undirected: declare both directions) ===
                 connected(hallway, registration_desk);
@@ -131,24 +139,6 @@ non-fluents nf_icra2026 {
                 alpha_duration = 0.6; 
                 alpha_justification = 0.6;
 
-                // === Reward weights / costs (override as needed) ===
-                w_deliver_explained = 6.0; 
-                w_deliver_unexplained = 3.0; 
-                w_resp_match = 1.0;
-                w_modality_match = 0.5; 
-                w_scope_match = 0.5; 
-                w_detail_match = 0.5; 
-                w_duration_match = 0.3; 
-                w_justification_match = 0.3; 
-                w_consistency = 0.2;
-                c_move = 0.4; 
-                c_pickdrop = 0.1; 
-                c_explain_base = 0.3; 
-                c_long = 0.2; 
-                c_narrative = 0.2; 
-                c_switch_attr = 0.1; 
-                c_step = 0.02;
-
 	};
 }
 
@@ -160,8 +150,6 @@ instance icra2026_instance {
 
                 // --- Robots
                 robot_at(tiago, registration_desk);
-                human_at(visitor_1, reading_space_1);
-                human_at(visitor_2, reading_space_2);
 
                 // --- Books
                 book_at(book_1, bookshelf_space);
