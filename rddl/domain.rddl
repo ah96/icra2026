@@ -21,17 +21,13 @@ domain icra2026 {
     // ===== Parameters & Variables =====
     pvariables {
 
+        // ---------- Non-Fluents ----------
         // ---------- World topology ----------
         connected(waypoint, waypoint): { non-fluent, bool, default = false };  // undirected edges should be listed both ways in the instance    
 
         // ---------- Task state (navigation & manipulation) ----------
-        robot_at(robot, waypoint): { state-fluent, bool, default = false };
-        book_at(book, waypoint): { state-fluent, bool, default = false };
         human_at(human, waypoint): { non-fluent, bool, default = false };
         human_wants_book(human, book): { non-fluent, bool, default = false };
-        human_asked_for_book(human, book): { state-fluent, bool, default = false };
-        holding(robot, book): { state-fluent, bool, default = false };
-        delivered(book, human): { state-fluent, bool, default = false }; // whether book has been delivered to human
 
         // ---------- Situation --> Response core ----------
         // One-hot flag indicating the currently active situation for a (robot,human)
@@ -40,21 +36,11 @@ domain icra2026 {
         // Prior over response types for each situation (from user study)
         p_resp(response_type, situation): { non-fluent, real, default = 0.5 };
 
-        // Which response type is selected for a (robot,human,situation); persists until changed
-        selected_response(response_type, robot, human, situation): { state-fluent, bool, default = false };
-
-        // Action to respond with a given type in the current situation (one per step)
-        respond(response_type, robot, human, situation): { action-fluent, bool, default = false };
-
         // Helper: which response types are "explanations" (set in instance; e.g., why_expl/what_expl = true)
         is_explanation_type(response_type): { non-fluent, bool, default = false };
 
         // Helper: which situation allows fetching a book
         situation_allows_fetching(situation): { non-fluent, bool, default = false };
-
-        // ---------- Explanation planning pipeline ----------
-        explanation_planning_started(response_type, robot, human): { state-fluent, bool, default = false };
-        explanation_planning_ended(response_type, robot, human): { state-fluent, bool, default = false };
 
         // Attribute families: modality, scope, detail, duration, tone, justification
         // Per-human baselines (probabilities of the FIRST value in each family; complement is the other value)
@@ -77,6 +63,24 @@ domain icra2026 {
         alpha_detail: { non-fluent, real, default = 0.5 };
         alpha_duration: { non-fluent, real, default = 0.5 };
         alpha_justification: { non-fluent, real, default = 0.5 };
+
+
+
+        // ---------- State-Fluents ----------
+        // ---------- Task state (navigation & manipulation) ----------
+        robot_at(robot, waypoint): { state-fluent, bool, default = false };
+        book_at(book, waypoint): { state-fluent, bool, default = false };
+        holding(robot, book): { state-fluent, bool, default = false };
+        not_holding(robot, book): { state-fluent, bool, default = false };
+        delivered(book, human): { state-fluent, bool, default = false }; // whether book has been delivered to human
+        asked_for_book(?h, ?r, ?bk): { state-fluent, bool, default = false };
+
+        // Which response type is selected for a (robot,human,situation); persists until changed
+        selected_response(response_type, robot, human, situation): { state-fluent, bool, default = false };
+
+        // ---------- Explanation planning pipeline ----------
+        explanation_planning_started(response_type, robot, human): { state-fluent, bool, default = false };
+        explanation_planning_ended(response_type, robot, human): { state-fluent, bool, default = false };
 
         // Wanted samples per human (stochastic preferences drawn each step)
         modality_visual_wanted(human): { state-fluent, bool, default = false }; // textual_wanted = !visual_wanted
@@ -102,31 +106,35 @@ domain icra2026 {
         justification_contrastive_selected(robot, human, book): { state-fluent, bool, default = false };
 
 
-        // ---------- Actions ----------
+        // ---------- Action-Fluents ----------
         // Navigation & manipulation
         goto_waypoint(robot, waypoint, waypoint): { action-fluent, bool, default = false };
         fetch_book(robot, book): { action-fluent, bool, default = false };
-        give_book(robot, book): { action-fluent, bool, default = false };
+        give_book(robot, book, human): { action-fluent, bool, default = false };
+        ask_for_book(human, robot, book): { action-fluent, bool, default = false };
+
+        // Action to respond with a given type in the current situation (one per step)
+        respond(response_type, robot, human, situation): { action-fluent, bool, default = false };
 
         // Explanation planning
-        start_explanation_planning(robot, human, book): { action-fluent, bool, default = false };
-        end_explanation_planning(robot, human, book): { action-fluent, bool, default = false };
+        start_explanation_planning(response_type, robot, human, situation): { action-fluent, bool, default = false };
+        end_explanation_planning(response_type, robot, human, situation): { action-fluent, bool, default = false };
 
         // Attribute selections
-        choose_visual_modality(robot, human, book): { action-fluent, bool, default = false };
-        choose_textual_modality(robot, human, book): { action-fluent, bool, default = false };
+        choose_visual_modality(response_type, robot, human, situation): { action-fluent, bool, default = false };
+        choose_textual_modality(response_type, robot, human, situation): { action-fluent, bool, default = false };
 
-        choose_local_scope(robot, human, book): { action-fluent, bool, default = false };
-        choose_global_scope(robot, human, book): { action-fluent, bool, default = false };
+        choose_local_scope(response_type, robot, human, situation): { action-fluent, bool, default = false };
+        choose_global_scope(response_type, robot, human, situation): { action-fluent, bool, default = false };
 
-        choose_summary_detail(robot, human, book): { action-fluent, bool, default = false };
-        choose_narrative_detail(robot, human, book): { action-fluent, bool, default = false };
+        choose_summary_detail(response_type, robot, human, situation): { action-fluent, bool, default = false };
+        choose_narrative_detail(response_type, robot, human, situation): { action-fluent, bool, default = false };
 
-        choose_short_duration(robot, human, book): { action-fluent, bool, default = false };
-        choose_long_duration(robot, human, book): { action-fluent, bool, default = false };
+        choose_short_duration(response_type, robot, human, situation): { action-fluent, bool, default = false };
+        choose_long_duration(response_type, robot, human, situation): { action-fluent, bool, default = false };
 
-        choose_justification_standard(robot, human, book): { action-fluent, bool, default = false };
-        choose_justification_contrastive(robot, human, book): { action-fluent, bool, default = false };
+        choose_justification_standard(response_type, robot, human, situation): { action-fluent, bool, default = false };
+        choose_justification_contrastive(response_type, robot, human, situation): { action-fluent, bool, default = false };
     
     };
 
@@ -141,27 +149,25 @@ domain icra2026 {
 
         // --- Book movement
         book_at'(?bk, ?w) =
-            // if picked at (r,w) it disappears from waypoint; if dropped at (r,w) it appears
             ( book_at(?bk, ?w) & ~exists_{?r: robot} [ fetch_book(?r, ?bk) & robot_at(?r, ?w) ] )
-            | exists_{?r: robot} [ give_book(?r, ?bk) & robot_at(?r, ?w) ];
+            | exists_{?r: robot, ?h: human} [ give_book(?r, ?bk, ?h) & robot_at(?r, ?w) & human_at(?h, ?w) ];
 
-        // --- Pick/drop/deliver dynamics ---
-        holding'(?r, ?bk) = ( holding(?r, ?bk)
-            & ~give_book(?r, ?bk) )
-        | fetch_book(?r, ?bk);
+        // --- Holding dynamics ---
+        holding'(?r, ?bk) = holding(?r, ?bk) | fetch_book(?r, ?bk);
+        not_holding'(?r, ?bk) = not_holding(?r, ?bk) | exists_{?h: human} [ give_book(?r, ?bk, ?h) ];
 
         // --- Book delivered
-        delivered'(?bk, ?h) = delivered(?bk, ?h) | give_book(?r, ?bk, ?h);
+        delivered'(?bk, ?h) = delivered(?bk, ?h) | exists_{?r: robot} [ give_book(?r, ?bk, ?h) ];
+        
+        // --- Human asked for a book?
+        asked_for_book'(?h, ?r, ?bk) = ask_for_book(?h, ?r, ?bk) | asked_for_book(?h, ?r, ?bk);
 
         // --- Response selection persistence/update
-        selected_response'(?rt, ?r, ?h, ?s) =
-            respond(?rt, ?r, ?h, ?s)
-            | ( selected_response(?rt, ?r, ?h, ?s)
-                & ~exists_{?rt2: response_type} [ respond(?rt2, ?r, ?h, ?s) ] );
+        selected_response'(?rt, ?r, ?h, ?s) = respond(?rt, ?r, ?h, ?s) | selected_response(?rt, ?r, ?h, ?s);
 
         // --- Explanation pipeline persistence
-        explanation_planning_started'(?r, ?h, ?b) = explanation_planning_started(?r, ?h, ?b) | start_explanation_planning(?r, ?h, ?b);
-        explanation_planning_ended'(?r, ?h, ?b) = explanation_planning_ended(?r, ?h, ?b) | end_explanation_planning(?r, ?h, ?b);
+        explanation_planning_started'(?rt, ?r, ?h, ?s) = explanation_planning_started(?rt, ?r, ?h, ?s) | start_explanation_planning(?rt, ?r, ?h, ?s);
+        explanation_planning_ended'(?rt, ?r, ?h, ?s) = explanation_planning_ended(?rt, ?r, ?h, ?s) | end_explanation_planning(?rt, ?r, ?h, ?s);
 
         // --- Wanted preferences (mixture of per-human baselines and response-type norms, weighted by situation) ---
         modality_visual_wanted'(?h) = Bernoulli(
@@ -233,105 +239,124 @@ domain icra2026 {
         // A robot can not be in two places at the same time
         forall_{?r: robot, ?w1: waypoint, ?w2: waypoint} [ ?w1 == ?w2 | (robot_at(?r, ?w1) => ~robot_at(?r, ?w2)) ];        
 
-        // --- Fetch/give book constraints
+        // --- Fetch/give/ask_for book constraints
         forall_{?r: robot, ?bk: book, ?w: waypoint} [
             fetch_book(?r, ?bk) => ( robot_at(?r, ?w) ^ book_at(?bk, ?w) ^ ~holding(?r, ?bk) ^ 
-                                    exists_{?s: situation} [ is_active_situation(?s) ^ situation_allows_fetching(?s) ] )
+                                    exists_{?s: situation} [ is_active_situation(?s) ^ situation_allows_fetching(?s) ] ^ 
+                                    exists_{?h: human} [ asked_for_book(?h, ?r, ?bk) ] )
         ];
-        forall_{?r: robot, ?bk: book, ?w: waypoint} [
-            give_book(?r, ?bk, ?h) => ( robot_at(?r, ?w) ^ holding(?r, ?bk) ^ human_at(?h, ?w) ^ human_asked_for_book(?h, ?bk) )
+        forall_{?r: robot, ?bk: book, ?h: human} [
+            give_book(?r, ?bk, ?h) => ( exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ 
+                                        holding(?r, ?bk) ^ not_holding(?r, ?bk) ^ asked_for_book(?h, ?r, ?bk) )
+        ];
+        forall_{?h: human, ?r: robot, ?bk: book} [
+            ask_for_book(?h, ?r, ?bk) => ( exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] )
         ];
 
         // --- Response selection (only for active situation; at-most-one per step)
         forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
-            respond(?rt, ?r, ?h, ?s) => ( ( is_active_situation(?r, ?h, ?s) ^ ~is_explanation_type(?rt) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ) |
-                                        ( is_active_situation(?r, ?h, ?s) ^ is_explanation_type(?rt) ^ explanation_planning_ended(?rt, ?r, ?h) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ) )
-        ];
+            respond(?rt, ?r, ?h, ?s) => ( 
+                ( Bernoulli(p_resp(rt, s)) ^ is_active_situation(?r, ?h, ?s) ^ ~is_explanation_type(?rt) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ ~situation_allows_fetching(s) ) |
+                ( Bernoulli(p_resp(rt, s)) ^ is_active_situation(?r, ?h, ?s) ^ ~is_explanation_type(?rt) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ situation_allows_fetching(s) ^ exists_{?bk: book} [ delivered(?bk, ?h) ] ) |
+                ( is_active_situation(?r, ?h, ?s) ^ is_explanation_type(?rt) ^ explanation_planning_ended(?rt, ?r, ?h) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ ~situation_allows_fetching(s) ) | 
+                ( is_active_situation(?r, ?h, ?s) ^ is_explanation_type(?rt) ^ explanation_planning_ended(?rt, ?r, ?h) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ situation_allows_fetching(s) ^ exists_{?bk: book} [ delivered(?bk, ?h) ] ) 
+                ) ];
         forall_{?r: robot, ?h: human, ?s: situation, ?rt1: response_type, ?rt2: response_type} [
             (?rt1 ~= ?rt2) => ~( respond(?rt1, ?r, ?h, ?s) ^ respond(?rt2, ?r, ?h, ?s) )
         ];
 
-        // --- Planning sequence constraints
-        forall_{?r: robot, ?h: human, ?b: book} [
-            start_explanation_planning(?r, ?h, ?b) =>
-            ( ~explanation_planning_started(?r, ?h, ?b) ^ ~explanation_planning_ended(?r, ?h, ?b) )
-        ];
-        forall_{?r: robot, ?h: human, ?b: book} [
-            end_explanation_planning(?r, ?h, ?b) =>
-            ( explanation_planning_started(?r, ?h, ?b)
-              ^ (modality_visual_selected(?r, ?h, ?b) | modality_textual_selected(?r, ?h, ?b))
-              ^ (scope_local_selected(?r, ?h, ?b) | scope_global_selected(?r, ?h, ?b))
-              ^ (detail_summary_selected(?r, ?h, ?b) | detail_narrative_selected(?r, ?h, ?b)) )
-        ];
+        // --- Explanation planning sequence preconditions
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            start_explanation_planning(?rt, ?r, ?h, ?s) => ( 
+                ( ~explanation_planning_started(?rt, ?r, ?h, ?s) ^ Bernoulli(p_resp(rt, s)) ^ is_explanation_type(?rt) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ ~situation_allows_fetching(s) ) |
+                ( ~explanation_planning_started(?rt, ?r, ?h, ?s) ^ Bernoulli(p_resp(rt, s)) ^ is_explanation_type(?rt) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ situation_allows_fetching(s) ^ exists_{?bk: book} [ delivered(?bk, ?h) ] )
+            ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            end_explanation_planning(?rt, ?r, ?h, ?s) =>
+            ( explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_selected(?rt, ?r, ?h, ?s) | scope_global_selected(?rt, ?r, ?h, ?s))
+              ^ (detail_summary_selected(?rt, ?r, ?h, ?s) | detail_narrative_selected(?rt, ?r, ?h, ?s))
+              ^ (duration_short_selected(?rt, ?r, ?h, ?s) | duration_long_selected(?rt, ?r, ?h, ?s))
+              ^ (justification_standard_selected(?rt, ?r, ?h, ?s) | justification_contrastive_selected(?rt, ?r, ?h, ?s)) 
+            ) ];
 
         // --- Explanation gating: attribute choices only when an explanation-type response is active in the current situation
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_visual_modality(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_visual_modality(?rt, ?r, ?h, ?s) =>
+                (explanation_planning_started(?rt, ?r, ?h, ?s) ^ modality_visual_wanted(?h))              
         ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
             choose_textual_modality(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
+                (explanation_planning_started(?rt, ?r, ?h, ?s) ^ modality_visual_wanted(?h))
         ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_local_scope(?rt, ?r, ?h, ?s) =>
+                (explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_wanted(?rt, ?r, ?h, ?s)) 
+        ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_global_scope(?rt, ?r, ?h, ?s) =>
+                (explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (~scope_local_wanted(?rt, ?r, ?h, ?s)) 
+        ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_summary_detail(?rt, ?r, ?h, ?s) =>
+                (explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_selected(?rt, ?r, ?h, ?s) | scope_global_selected(?rt, ?r, ?h, ?s))
+              ^ (detail_summary_wanted(?rt, ?r, ?h, ?s)) 
+        ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_narrative_detail(?rt, ?r, ?h, ?s) =>
+                ( explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_selected(?rt, ?r, ?h, ?s) | scope_global_selected(?rt, ?r, ?h, ?s))
+              ^ (~detail_summary_wanted(?rt, ?r, ?h, ?s)) 
+        ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_short_duration(?rt, ?r, ?h, ?s) =>
+                ( explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_selected(?rt, ?r, ?h, ?s) | scope_global_selected(?rt, ?r, ?h, ?s))
+              ^ (detail_summary_selected(?rt, ?r, ?h, ?s) | detail_narrative_selected(?rt, ?r, ?h, ?s))
+              ^ (duration_short_wanted(?rt, ?r, ?h, ?s)) 
+        ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_long_duration(?rt, ?r, ?h, ?s) =>
+                ( explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_selected(?rt, ?r, ?h, ?s) | scope_global_selected(?rt, ?r, ?h, ?s))
+              ^ (detail_summary_selected(?rt, ?r, ?h, ?s) | detail_narrative_selected(?rt, ?r, ?h, ?s))
+              ^ (~duration_short_wanted(?rt, ?r, ?h, ?s)) 
+        ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            choose_justification_standard(?rt, ?r, ?h, ?s) =>
+                ( explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_selected(?rt, ?r, ?h, ?s) | scope_global_selected(?rt, ?r, ?h, ?s))
+              ^ (detail_summary_selected(?rt, ?r, ?h, ?s) | detail_narrative_selected(?rt, ?r, ?h, ?s))
+              ^ (duration_short_selected(?rt, ?r, ?h, ?s) | duration_long_selected(?rt, ?r, ?h, ?s))
+              ^ (justification_standard_wanted(?rt, ?r, ?h, ?s)) 
+        ) ];
         forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_local_scope(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_global_scope(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_summary_detail(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_narrative_detail(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_short_duration(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_long_duration(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_justification_standard(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
-        forall_{?rb: robot, ?h: human, ?b: book} [
-            choose_justification_contrastive(?rb, ?h, ?b) =>
-              exists_{?s: situation, ?rt: response_type} [
-                  is_active_situation(?rb, ?h, ?s) & is_explanation_type(?rt) & (respond(?rt, ?rb, ?h, ?s) | selected_response(?rt, ?rb, ?h, ?s))
-              ]
-        ];
+            choose_justification_contrastive(?rt, ?r, ?h, ?s) =>
+                ( explanation_planning_started(?rt, ?r, ?h, ?s)
+              ^ (modality_visual_selected(?rt, ?r, ?h, ?s) | modality_textual_selected(?rt, ?r, ?h, ?s))
+              ^ (scope_local_selected(?rt, ?r, ?h, ?s) | scope_global_selected(?rt, ?r, ?h, ?s))
+              ^ (detail_summary_selected(?rt, ?r, ?h, ?s) | detail_narrative_selected(?rt, ?r, ?h, ?s))
+              ^ (duration_short_selected(?rt, ?r, ?h, ?s) | duration_long_selected(?rt, ?r, ?h, ?s))
+              ^ (~justification_standard_wanted(?rt, ?r, ?h, ?s))
+        ) ];
 
         // --- Attribute mutual exclusivity per step
-        forall_{?rb: robot, ?h: human, ?b: book} [ ~( choose_visual_modality(?rb, ?h, ?b) ^ choose_textual_modality(?rb, ?h, ?b) ) ];
-        forall_{?rb: robot, ?h: human, ?b: book} [ ~( choose_local_scope(?rb, ?h, ?b) ^ choose_global_scope(?rb, ?h, ?b) ) ];
-        forall_{?rb: robot, ?h: human, ?b: book} [ ~( choose_summary_detail(?rb, ?h, ?b) ^ choose_narrative_detail(?rb, ?h, ?b) ) ];
-        forall_{?rb: robot, ?h: human, ?b: book} [ ~( choose_short_duration(?rb, ?h, ?b) ^ choose_long_duration(?rb, ?h, ?b) ) ];
-        forall_{?rb: robot, ?h: human, ?b: book} [ ~( choose_justification_standard(?rb, ?h, ?b) ^ choose_justification_contrastive(?rb, ?h, ?b) ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [ ~( choose_visual_modality(?rt, ?r, ?h, ?s) ^ choose_textual_modality(?rt, ?r, ?h, ?s) ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [ ~( choose_local_scope(?rt, ?r, ?h, ?s) ^ choose_global_scope(?rt, ?r, ?h, ?s) ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [ ~( choose_summary_detail(?rt, ?r, ?h, ?s) ^ choose_narrative_detail(?rt, ?r, ?h, ?s) ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [ ~( choose_short_duration(?rt, ?r, ?h, ?s) ^ choose_long_duration(?rt, ?r, ?h, ?s) ) ];
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [ ~( choose_justification_standard(?rt, ?r, ?h, ?s) ^ choose_justification_contrastive(?rt, ?r, ?h, ?s) ) ];
 
     }
 

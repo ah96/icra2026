@@ -150,6 +150,8 @@ instance icra2026_instance {
 
                 // --- Robots
                 robot_at(tiago, registration_desk);
+                not_holding(tiago, book_1);
+                not_holding(tiago, book_1);
 
                 // --- Books
                 book_at(book_1, bookshelf_space);
