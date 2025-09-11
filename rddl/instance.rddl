@@ -14,16 +14,16 @@ non-fluents nf_icra2026 {
                 // --- Humans
                 human_at(visitor_1, reading_space_1);
                 human_at(visitor_2, reading_space_2);
-                human_wants_book(visitor_1, book_1)
-                human_wants_book(visitor_2, book_2)
+                human_wants_book(visitor_1, book_1);
+                human_wants_book(visitor_2, book_2);
 
                 // --- Situation flags per robot-human
                 is_active_situation(tiago, visitor_1, agent_error);                
                 is_active_situation(tiago, visitor_2, uncertainty);
 
                 // === Which response types are "explanations" (internal variable) ===
-                is_explanation_type(why_expl);
-                is_explanation_type(what_expl);
+                is_explanatory_response(why_expl);
+                is_explanatory_response(what_expl);
                 // all others default to false (apology, next_action, ask_for_help, continue)
 
                 // === Which situation results in fetching a book ===
@@ -150,8 +150,6 @@ instance icra2026_instance {
 
                 // --- Robots
                 robot_at(tiago, registration_desk);
-                not_holding(tiago, book_1);
-                not_holding(tiago, book_1);
 
                 // --- Books
                 book_at(book_1, bookshelf_space);
@@ -159,7 +157,7 @@ instance icra2026_instance {
 
 	};
 
-	max-nondef-actions = 1;
+	max-nondef-actions = 3;
 	horizon  = 30;
 	discount = 1.0;
 }
