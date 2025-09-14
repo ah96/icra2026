@@ -1,0 +1,113 @@
+non-fluents nf_aaai {
+        domain = aaai;
+        objects {
+                robot: {tiago};
+                human: {visitor_1, visitor_2};
+                book: {book_1, book_2};
+                waypoint: {hallway, registration_desk, reading_space_1, reading_space_2, bookshelf_space, social_room};
+                situation: {normal_success, agent_error, uncertainty, inability, suboptimal_behavior, norm_violation, unforeseen_circumstances};
+                response_type: {apology, why_expl, what_expl, next_action, ask_for_help, continue};
+        };
+	
+	non-fluents {
+                // === Waypoint Topology (undirected: declare both directions) ===
+                connected(hallway, registration_desk);
+                connected(registration_desk, hallway);
+                connected(hallway, reading_space_1);
+                connected(reading_space_1, hallway);
+                connected(hallway, reading_space_2);
+                connected(reading_space_2, hallway);
+                connected(hallway, bookshelf_space);
+                connected(bookshelf_space, hallway);
+                connected(hallway, social_room);
+                connected(social_room, hallway);
+
+	        // humans
+                human_at(visitor_1, reading_space_1);
+                human_at(visitor_2, reading_space_2);
+                human_wants_book(visitor_1, book_1);
+                human_wants_book(visitor_2, book_2);
+                N_humans = 2;
+
+                // --- Situation flags per robot-human
+                is_active_situation(tiago, visitor_1, suboptimal_behavior);                
+                is_active_situation(tiago, visitor_2, norm_violation);
+
+                // === Fetching probabilities conditioned on a situation ===
+                // fetching_prob(normal_success) = 1.0;
+                // fetching_prob(agent_error) = 0.0;
+                // fetching_prob(uncertainty) = 0.4;
+                // fetching_prob(inability) = 0.1;
+                // fetching_prob(suboptimal_behavior) = 0.8;
+                // fetching_prob(norm_violation) = 0.9;
+                // fetching_prob(unforeseen_circumstances) = 0.3;
+
+                fetching_prob_bool(normal_success);
+                // fetching_prob_bool(agent_error) = False;
+                // fetching_prob_bool(uncertainty) = False;
+                // fetching_prob_bool(inability) = False;
+                fetching_prob_bool(suboptimal_behavior);
+                fetching_prob_bool(norm_violation);
+                // fetching_prob_bool(unforeseen_circumstances); 
+
+                // === Situation → Response-Type priors from study (rows normalized) ===
+                p_resp(apology,normal_success) = 0.11;
+                p_resp(why_expl,normal_success) = 0.13;
+                p_resp(what_expl,normal_success) = 0.15;
+                p_resp(next_action,normal_success) = 0.16;
+                p_resp(ask_for_help,normal_success) = 0.12;
+                p_resp(continue,normal_success) = 0.33;
+                p_resp(apology,agent_error) = 0.21;
+                p_resp(why_expl,agent_error) = 0.20;
+                p_resp(what_expl,agent_error) = 0.17;
+                p_resp(next_action,agent_error) = 0.18;
+                p_resp(ask_for_help,agent_error) = 0.17;
+                p_resp(continue,agent_error) = 0.07;
+                p_resp(apology,uncertainty) = 0.12;
+                p_resp(why_expl,uncertainty) = 0.19;
+                p_resp(what_expl,uncertainty) = 0.16;
+                p_resp(next_action,uncertainty) = 0.19;
+                p_resp(ask_for_help,uncertainty) = 0.24;
+                p_resp(continue,uncertainty) = 0.10;
+                p_resp(apology,inability) = 0.14;
+                p_resp(why_expl,inability) = 0.21;
+                p_resp(what_expl,inability) = 0.18;
+                p_resp(next_action,inability) = 0.17;
+                p_resp(ask_for_help,inability) = 0.21;
+                p_resp(continue,inability) = 0.09;
+                p_resp(apology,suboptimal_behavior) = 0.10;
+                p_resp(why_expl,suboptimal_behavior) = 0.20;
+                p_resp(what_expl,suboptimal_behavior) = 0.19;
+                p_resp(next_action,suboptimal_behavior) = 0.18;
+                p_resp(ask_for_help,suboptimal_behavior) = 0.12;
+                p_resp(continue,suboptimal_behavior) = 0.21;
+                p_resp(apology,norm_violation) = 0.21;
+                p_resp(why_expl,norm_violation) = 0.22;
+                p_resp(what_expl,norm_violation) = 0.17;
+                p_resp(next_action,norm_violation) = 0.16;
+                p_resp(ask_for_help,norm_violation) = 0.11;
+                p_resp(continue,norm_violation) = 0.13;
+                p_resp(apology,unforeseen_circumstances) = 0.11;
+                p_resp(why_expl,unforeseen_circumstances) = 0.23;
+                p_resp(what_expl,unforeseen_circumstances) = 0.22;
+                p_resp(next_action,unforeseen_circumstances) = 0.18;
+                p_resp(ask_for_help,unforeseen_circumstances) = 0.20;
+                p_resp(continue,unforeseen_circumstances) = 0.06;
+	};
+}
+
+instance aaai_instance {
+	domain = aaai;
+	non-fluents = nf_aaai;
+	
+        init-state {
+                robot_at(tiago, registration_desk);
+
+                book_at(book_1, bookshelf_space);
+                book_at(book_2, bookshelf_space);
+	};
+
+	max-nondef-actions = 1;
+	horizon  = 30;
+	discount = 1.0;
+}

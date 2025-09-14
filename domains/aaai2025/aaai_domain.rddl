@@ -1,0 +1,149 @@
+// How to run prost
+// ./run-server.py -b benchmarks/aaai/
+// ./prost.py aaai_instance "[Prost -s 1 -se [IPC2014]]"
+
+domain aaai {
+    
+    // ===== Types =====
+    types {
+        human: object;
+        robot: object;
+        book: object;
+        waypoint: object;
+        situation : object;
+        response_type : object;        
+    };
+
+    // ===== Parameters and Variables =====
+    pvariables {
+        //////////////////////////////////////////////////////////////////////////////////////////
+        // Non-Fluents
+        connected(waypoint, waypoint): { non-fluent, bool, default = false };        
+        human_at(human, waypoint): { non-fluent, bool, default = false };
+        human_wants_book(human, book): { non-fluent, bool, default = false };
+        N_humans: { non-fluent, real, default = 0.5 };
+        is_active_situation(robot, human, situation): { non-fluent, bool, default = false };
+        //fetching_prob(situation): { non-fluent, real, default = 0.5 };
+        fetching_prob_bool(situation): { non-fluent, bool, default = false };
+        p_resp(response_type, situation): { non-fluent, real, default = 0.5 };
+       
+        //////////////////////////////////////////////////////////////////////////////////////////
+        // State fluents
+        robot_at(robot, waypoint): { state-fluent, bool, default = false };
+        book_at(book, waypoint): { state-fluent, bool, default = false };
+        asked_for_book(human, robot, book): { state-fluent, bool, default = false };
+        situation_happened(situation, robot, human, book): { state-fluent, bool, default = false };
+        fetched_book(robot, book, human, situation): { state-fluent, bool, default = false };
+        holding(robot, book): { state-fluent, bool, default = false };
+        delivered(book, human): { state-fluent, bool, default = false };
+        p_resp_bool(response_type, situation): { state-fluent, bool, default = false };
+        selected_response(response_type, robot, human, situation): { state-fluent, bool, default = false };
+        responded(robot, human): { state-fluent, bool, default = false };
+        //goal_reached: { state-fluent, bool, default = false };
+        
+        //////////////////////////////////////////////////////////////////////////////////////////
+        // Action fluents
+        goto_waypoint(robot, waypoint, waypoint): { action-fluent, bool, default = false };
+        ask_for_book(human, robot, book): { action-fluent, bool, default = false };
+        situation_happens(situation, robot, human, book): { action-fluent, bool, default = false }; 
+        fetch_book(robot, book, human, situation): { action-fluent, bool, default = false };
+        give_book(robot, book, human): { action-fluent, bool, default = false };
+        respond(response_type, robot, human, situation): { action-fluent, bool, default = false };
+    };
+
+    // ===== Dynamics =====
+    cpfs {
+        robot_at'(?r, ?w) = if (exists_{?w1: waypoint} (goto_waypoint(?r, ?w1, ?w))) then true 
+                            else if (exists_{?w1: waypoint} (goto_waypoint(?r, ?w, ?w1))) then false
+                            else robot_at(?r, ?w);
+
+        book_at'(?bk, ?w) = if (exists_{?r: robot, ?h: human} (give_book(?r, ?bk, ?h) ^ robot_at(?r, ?w) ^ human_at(?h, ?w))) then true
+                            else if (exists_{?r: robot, ?h: human, ?s: situation} (fetch_book(?r, ?bk, ?h, ?s) ^ robot_at(?r, ?w))) then false
+                            else book_at(?bk, ?w);
+
+        asked_for_book'(?h, ?r, ?bk) = ask_for_book(?h, ?r, ?bk) | asked_for_book(?h, ?r, ?bk);
+
+        situation_happened'(?s, ?r, ?h, ?bk) = situation_happens(?s, ?r, ?h, ?bk) | situation_happened(?s, ?r, ?h, ?bk);
+
+        fetched_book'(?r, ?bk, ?h, ?s) = fetch_book(?r, ?bk, ?h, ?s) | fetched_book(?r, ?bk, ?h, ?s);
+
+        holding'(?r, ?bk) = if (exists_{?h: human, ?s: situation} (fetch_book(?r, ?bk, ?h, ?s))) then true
+                            else if (exists_{?h: human} (give_book(?r, ?bk, ?h))) then false 
+                            else holding(?r, ?bk);
+
+        delivered'(?bk, ?h) = (exists_{?r: robot} [give_book(?r, ?bk, ?h)]) | delivered(?bk, ?h);
+
+        p_resp_bool'(?rt, ?s) = Bernoulli(p_resp(?rt, ?s)) | p_resp_bool(?rt, ?s);
+
+        selected_response'(?rt, ?r, ?h, ?s) = respond(?rt, ?r, ?h, ?s) | selected_response(?rt, ?r, ?h, ?s);
+
+        responded'(?r, ?h) = (exists_{?rt: response_type, ?s: situation} [respond(?rt, ?r, ?h, ?s)]) | responded(?r, ?h);
+
+        //goal_reached' = (exists_{?h: human, ?r: robot, ?w: waypoint} [robot_at(?r, ?w) ^ human_at(?h, ?w)]) | goal_reached;
+    };
+
+    // ===== Action Preconditions =====
+    action-preconditions {
+        // A robot must be in a position to move to another
+        forall_{?r: robot, ?wf: waypoint, ?wt: waypoint} [goto_waypoint(?r, ?wf, ?wt) => ( robot_at(?r, ?wf) ^ connected(?wf, ?wt) ) ];
+
+        // A robot can not move to its current position
+        forall_{?r: robot, ?wf: waypoint, ?wt: waypoint} [goto_waypoint(?r, ?wf, ?wt) => ( ?wf ~= ?wt )];
+
+        // A robot can not be in two places at the same time
+        forall_{?r: robot, ?w1: waypoint, ?w2: waypoint} [?w1 == ?w2 | (robot_at(?r, ?w1) => ~robot_at(?r, ?w2))];
+    
+        // Ask for a book
+        forall_{?h: human, ?r: robot, ?bk: book} [ask_for_book(?h, ?r, ?bk) => (~responded(?r, ?h) ^ exists_{?w: waypoint} [robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ human_wants_book(?h, ?bk) ) ];
+
+        // Ask for a book
+        forall_{?s: situation, ?r: robot, ?h: human, ?bk: book} [situation_happens(?s, ?r, ?h, ?bk) => (~responded(?r, ?h) ^  exists_{?w: waypoint} [robot_at(?r, ?w) ^ book_at(?bk, ?w) ^ asked_for_book(?h, ?r, ?bk) ^ is_active_situation(?r, ?h, ?s) ^ ~delivered(?bk, ?h) ] ) ];
+    
+        // Fetch book
+        forall_{?r: robot, ?bk: book, ?h: human, ?s: situation} [fetch_book(?r, ?bk, ?h, ?s) => ( exists_{?w: waypoint} [~responded(?r, ?h) ^ situation_happened(?s, ?r, ?h, ?bk) ^ robot_at(?r, ?w) ^ book_at(?bk, ?w) ^ ~holding(?r, ?bk) ^ fetching_prob_bool(?s) ] ) ];
+
+        // Give book
+        forall_{?r: robot, ?bk: book, ?h: human} [give_book(?r, ?bk, ?h) => (~responded(?r, ?h) ^ exists_{?w: waypoint} [robot_at(?r, ?w) ^ human_at(?h, ?w)] ^ holding(?r, ?bk) ^ asked_for_book(?h, ?r, ?bk) ) ];
+
+        // Respond
+        forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [ respond(?rt, ?r, ?h, ?s) => ( 
+                (~responded(?r, ?h) ^ p_resp_bool(?rt, ?s) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ ~fetching_prob_bool(?s) ^ exists_{?bk: book} [ situation_happened(?s, ?r, ?h, ?bk) ^ ~fetched_book(?r, ?bk, ?h, ?s) ] ) |
+                (~responded(?r, ?h) ^ p_resp_bool(?rt, ?s) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ fetching_prob_bool(?s) ^ exists_{?bk: book} [ situation_happened(?s, ?r, ?h, ?bk) ^ fetched_book(?r, ?bk, ?h, ?s) ^ delivered(?bk, ?h) ] )
+            ) ];
+    };
+
+    // Reward
+    //reward = if (goal_reached) then 1000 else -10;
+    //reward = sum_{?h: human, ?bk: book} [ if (delivered(?bk, ?h)) then 1000 else -10 ];
+    //reward = sum_{?r: robot, ?h: human} [ if (responded(?r, ?h) ^ exists_{?bk: book} (delivered(?bk, ?h))) then 10000 
+    //                                    else if (responded(?r, ?h) ^ ~exists_{?bk: book} (delivered(?bk, ?h))) then 200
+    //                                    else -1000 ]
+    //reward = sum_{?r: robot, ?h: human} [ if (responded(?r, ?h)) then 10000 else -100 ];
+    //reward = if ((sum_{?h: human} [ if (exists_{?r: robot} (responded(?r, ?h))) then 1 else 0 ]) == N_humans) then 10000 else -100;
+
+    // Encourage covering all humans, penalize waiting each step, tiny move cost
+    // Tunable weights (example values in comments)
+    reward =
+    // per-human waiting penalty until someone has responded to them
+    - 10 * sum_{?hh: human} [
+            if (exists_{?rr: robot} responded(?rr, ?hh)) then 0 else 1
+        ]
+
+    // dense reward for taking a response action this step
+    + 100 * sum_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+            if (respond(?rt, ?r, ?h, ?s)) then 1 else 0
+        ]
+
+    // small movement cost (bind ALL three args of goto_waypoint)
+    - 1   * sum_{?rrr: robot, ?wf: waypoint, ?wt: waypoint} [
+            if (goto_waypoint(?rrr, ?wf, ?wt)) then 1 else 0
+        ]
+
+    // team bonus when every human has been responded to
+    + 500 * (
+            if (forall_{?hhhh: human} (exists_{?rrrr: robot} responded(?rrrr, ?hhhh)))
+            then 1 else 0
+        );
+
+
+}

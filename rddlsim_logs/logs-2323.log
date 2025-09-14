@@ -56,3 +56,311 @@
 <client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
 <?xml version="1.0" encoding="UTF-8"?>
 <client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>27980.0</round-reward><turns-used>30</turns-used><time-left>1078176</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>27980.0</round-reward><turns-used>30</turns-used><time-left>1076841</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>27980.0</round-reward><turns-used>30</turns-used><time-left>1075522</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>83940.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1075521</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079568</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079479</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079395</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>8940.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1079393</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079556</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079470</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079385</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>8940.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1079383</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079550</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079459</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>2980.0</round-reward><turns-used>5</turns-used><time-left>1079376</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>8940.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1079374</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>1970.0</round-reward><turns-used>5</turns-used><time-left>1076468</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>1970.0</round-reward><turns-used>5</turns-used><time-left>1073149</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>1970.0</round-reward><turns-used>5</turns-used><time-left>1069804</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>5910.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1069802</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>1970.0</round-reward><turns-used>5</turns-used><time-left>1076373</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>1970.0</round-reward><turns-used>5</turns-used><time-left>1072144</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>1970.0</round-reward><turns-used>5</turns-used><time-left>1068878</time-left><immediate-reward>1000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>5910.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1068876</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-600.0</round-reward><turns-used>15</turns-used><time-left>1071679</time-left><immediate-reward>-40.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-600.0</round-reward><turns-used>15</turns-used><time-left>1062742</time-left><immediate-reward>-40.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-600.0</round-reward><turns-used>15</turns-used><time-left>1053865</time-left><immediate-reward>-40.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-1800.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1053863</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-600.0</round-reward><turns-used>15</turns-used><time-left>1068192</time-left><immediate-reward>-40.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-600.0</round-reward><turns-used>15</turns-used><time-left>1057730</time-left><immediate-reward>-40.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-600.0</round-reward><turns-used>15</turns-used><time-left>1046194</time-left><immediate-reward>-40.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-1800.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1046192</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>5460.0</round-reward><turns-used>15</turns-used><time-left>1071354</time-left><immediate-reward>970.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>5460.0</round-reward><turns-used>15</turns-used><time-left>1062323</time-left><immediate-reward>970.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>4450.0</round-reward><turns-used>15</turns-used><time-left>1051916</time-left><immediate-reward>970.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>15370.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1051914</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>32130.0</round-reward><turns-used>30</turns-used><time-left>1065398</time-left><immediate-reward>1980.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>32130.0</round-reward><turns-used>30</turns-used><time-left>1046018</time-left><immediate-reward>1980.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>31120.0</round-reward><turns-used>30</turns-used><time-left>1025741</time-left><immediate-reward>1980.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>95380.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>1025740</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>62670.0</round-reward><turns-used>30</turns-used><time-left>1048201</time-left><immediate-reward>5220.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>44490.0</round-reward><turns-used>30</turns-used><time-left>1021598</time-left><immediate-reward>5220.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>83880.0</round-reward><turns-used>30</turns-used><time-left>995658</time-left><immediate-reward>7240.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>191040.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>995657</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-7020.0</round-reward><turns-used>30</turns-used><time-left>1048158</time-left><immediate-reward>1180.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-16110.0</round-reward><turns-used>30</turns-used><time-left>1021835</time-left><immediate-reward>170.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-5000.0</round-reward><turns-used>30</turns-used><time-left>996175</time-left><immediate-reward>1180.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-28130.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>996173</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>28690.0</round-reward><turns-used>30</turns-used><time-left>1048402</time-left><immediate-reward>2000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>14550.0</round-reward><turns-used>30</turns-used><time-left>1021955</time-left><immediate-reward>990.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>11520.0</round-reward><turns-used>30</turns-used><time-left>996556</time-left><immediate-reward>990.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>54760.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>996554</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>14550.0</round-reward><turns-used>30</turns-used><time-left>1049789</time-left><immediate-reward>990.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-600.0</round-reward><turns-used>30</turns-used><time-left>1025219</time-left><immediate-reward>-20.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-600.0</round-reward><turns-used>30</turns-used><time-left>998702</time-left><immediate-reward>-20.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>13350.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>998701</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>14550.0</round-reward><turns-used>30</turns-used><time-left>1047895</time-left><immediate-reward>990.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-600.0</round-reward><turns-used>30</turns-used><time-left>1022163</time-left><immediate-reward>-20.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-600.0</round-reward><turns-used>30</turns-used><time-left>996168</time-left><immediate-reward>-20.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>13350.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>996167</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1048947</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1024071</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>997305</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-900.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>997304</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1051121</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1024025</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>997405</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-900.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>997403</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1045170</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1020171</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>993560</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-900.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>993559</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1047667</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-300.0</round-reward><turns-used>30</turns-used><time-left>1022258</time-left><immediate-reward>-10.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>116000.0</round-reward><turns-used>30</turns-used><time-left>1048748</time-left><immediate-reward>9000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>292000.0</round-reward><turns-used>30</turns-used><time-left>1044779</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>259000.0</round-reward><turns-used>30</turns-used><time-left>1018934</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>215000.0</round-reward><turns-used>30</turns-used><time-left>1045438</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>215000.0</round-reward><turns-used>30</turns-used><time-left>1019986</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>248000.0</round-reward><turns-used>30</turns-used><time-left>993133</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>678000.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>993131</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>149000.0</round-reward><turns-used>30</turns-used><time-left>1044836</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>215000.0</round-reward><turns-used>30</turns-used><time-left>1019847</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>215000.0</round-reward><turns-used>30</turns-used><time-left>993167</time-left><immediate-reward>20000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>579000.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>993165</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>105000.0</round-reward><turns-used>30</turns-used><time-left>1044183</time-left><immediate-reward>9000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>116000.0</round-reward><turns-used>30</turns-used><time-left>1019028</time-left><immediate-reward>9000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>94000.0</round-reward><turns-used>30</turns-used><time-left>992236</time-left><immediate-reward>9000.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>315000.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>992234</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>84900.0</round-reward><turns-used>30</turns-used><time-left>1042071</time-left><immediate-reward>9900.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>175800.0</round-reward><turns-used>30</turns-used><time-left>1015003</time-left><immediate-reward>9900.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>74800.0</round-reward><turns-used>30</turns-used><time-left>989352</time-left><immediate-reward>9900.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>335500.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>989350</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>1044038</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>1016378</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>990298</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-9000.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>990296</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>1042150</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>1014710</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>987685</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-9000.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>1</session-id><time-left>987684</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>1045243</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>1</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>1019803</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>2</round-num><round-reward>-3000.0</round-reward><turns-used>30</turns-used><time-left>992772</time-left><immediate-reward>-100.0</immediate-reward></round-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<session-end><instance-name>aaai_instance</instance-name><total-reward>-9000.0</total-reward><rounds-used>3</rounds-used><client-name>prost</client-name><session-id>2</session-id><time-left>992771</time-left></session-end>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<client-info><client-hostname>localhost</client-hostname><client-ip>127.0.0.1</client-ip></client-info>
+<?xml version="1.0" encoding="UTF-8"?>
+<round-end><instance-name>aaai_instance</instance-name><client-name>prost</client-name><round-num>0</round-num><round-reward>5039400.0</round-reward><turns-used>30</turns-used><time-left>1040160</time-left><immediate-reward>167980.0</immediate-reward></round-end>

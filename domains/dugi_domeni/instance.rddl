@@ -1,0 +1,163 @@
+non-fluents nf_icra2026 {
+	domain = icra2026;
+        objects {
+                robot: {tiago};
+                human: {visitor_1, visitor_2};
+                book: {book_1, book_2};
+                waypoint: {hallway, registration_desk, reading_space_1, reading_space_2, bookshelf_space, social_room};
+                situation: {normal_success, agent_error, uncertainty, inability, suboptimal, norm_violation, unforeseen};
+                response_type: {apology, why_expl, what_expl, next_action, ask_for_help, continue};
+	};
+	
+	non-fluents {
+
+                // === Waypoint Topology (undirected: declare both directions) ===
+                connected(hallway, registration_desk);
+                connected(registration_desk, hallway);
+                connected(hallway, reading_space_1);
+                connected(reading_space_1, hallway);
+                connected(hallway, reading_space_2);
+                connected(reading_space_2, hallway);
+                connected(hallway, bookshelf_space);
+                connected(bookshelf_space, hallway);
+                connected(hallway, social_room);
+                connected(social_room, hallway);
+
+                // --- Humans
+                human_at(visitor_1, reading_space_1);
+                human_at(visitor_2, reading_space_2);
+                human_wants_book(visitor_1, book_1);
+                human_wants_book(visitor_2, book_2);
+
+                // --- Situation flags per robot-human
+                is_active_situation(tiago, visitor_1, agent_error);                
+                is_active_situation(tiago, visitor_2, uncertainty);
+
+                // === Which response types are "explanations" (internal variable) ===
+                // is_explanatory_response(why_expl);
+                // is_explanatory_response(what_expl);
+                // all others default to false (apology, next_action, ask_for_help, continue)
+
+                // === Which situation results in fetching a book ===
+                situation_allows_fetching(normal_success);
+                situation_allows_fetching(suboptimal);
+                situation_allows_fetching(norm_violation);
+                // all other situations default to false
+                                
+                // === Situation → Response-Type priors from study (rows normalized) ===
+                p_resp(apology,normal_success) = 0.11;
+                p_resp(why_expl,normal_success) = 0.13;
+                p_resp(what_expl,normal_success) = 0.15;
+                p_resp(next_action,normal_success) = 0.16;
+                p_resp(ask_for_help,normal_success) = 0.12;
+                p_resp(continue,normal_success) = 0.33;
+                p_resp(apology,agent_error) = 0.21;
+                p_resp(why_expl,agent_error) = 0.20;
+                p_resp(what_expl,agent_error) = 0.17;
+                p_resp(next_action,agent_error) = 0.18;
+                p_resp(ask_for_help,agent_error) = 0.17;
+                p_resp(continue,agent_error) = 0.07;
+                p_resp(apology,uncertainty) = 0.12;
+                p_resp(why_expl,uncertainty) = 0.19;
+                p_resp(what_expl,uncertainty) = 0.16;
+                p_resp(next_action,uncertainty) = 0.19;
+                p_resp(ask_for_help,uncertainty) = 0.24;
+                p_resp(continue,uncertainty) = 0.10;
+                p_resp(apology,inability) = 0.14;
+                p_resp(why_expl,inability) = 0.21;
+                p_resp(what_expl,inability) = 0.18;
+                p_resp(next_action,inability) = 0.17;
+                p_resp(ask_for_help,inability) = 0.21;
+                p_resp(continue,inability) = 0.09;
+                p_resp(apology,suboptimal) = 0.10;
+                p_resp(why_expl,suboptimal) = 0.20;
+                p_resp(what_expl,suboptimal) = 0.19;
+                p_resp(next_action,suboptimal) = 0.18;
+                p_resp(ask_for_help,suboptimal) = 0.12;
+                p_resp(continue,suboptimal) = 0.21;
+                p_resp(apology,norm_violation) = 0.21;
+                p_resp(why_expl,norm_violation) = 0.22;
+                p_resp(what_expl,norm_violation) = 0.17;
+                p_resp(next_action,norm_violation) = 0.16;
+                p_resp(ask_for_help,norm_violation) = 0.11;
+                p_resp(continue,norm_violation) = 0.13;
+                p_resp(apology,unforeseen) = 0.11;
+                p_resp(why_expl,unforeseen) = 0.23;
+                p_resp(what_expl,unforeseen) = 0.22;
+                p_resp(next_action,unforeseen) = 0.18;
+                p_resp(ask_for_help,unforeseen) = 0.20;
+                p_resp(continue,unforeseen) = 0.06;
+
+                // === Per-human baseline attribute probabilities (FIRST value in each family) ===
+                // visual_modality_prob(visitor_1) = 0.60; 
+                // visual_modality_prob(visitor_2) = 0.50;
+                // local_scope_prob(visitor_1) = 0.50;     
+                // local_scope_prob(visitor_2) = 0.45;
+                // summary_detail_prob(visitor_1) = 0.55;  
+                // summary_detail_prob(visitor_2) = 0.60;
+                // short_duration_prob(visitor_1) = 0.60;  
+                // short_duration_prob(visitor_2) = 0.55;
+                // justification_contrastive_prob(visitor_1) = 0.55; 
+                // justification_contrastive_prob(visitor_2) = 0.50;
+
+                // === Normative priors by response type (FIRST value in family) ===
+                // p_visual_given_rt(why_expl)  = 0.40;  
+                // p_visual_given_rt(what_expl) = 0.60;  
+                // p_visual_given_rt(next_action) = 0.55;  
+                // p_visual_given_rt(apology) = 0.30;  
+                // p_visual_given_rt(ask_for_help) = 0.50;  
+                // p_visual_given_rt(continue) = 0.50;
+                // p_local_scope_given_rt(why_expl) = 0.40; 
+                // p_local_scope_given_rt(what_expl) = 0.60; 
+                // p_local_scope_given_rt(next_action) = 0.60; 
+                // p_local_scope_given_rt(apology) = 0.50; 
+                // p_local_scope_given_rt(ask_for_help) = 0.50; 
+                // p_local_scope_given_rt(continue) = 0.50;
+                // p_summary_detail_given_rt(why_expl) = 0.45; 
+                // p_summary_detail_given_rt(what_expl) = 0.60; 
+                // p_summary_detail_given_rt(next_action) = 0.70; 
+                // p_summary_detail_given_rt(apology) = 0.60; 
+                // p_summary_detail_given_rt(ask_for_help) = 0.55; 
+                // p_summary_detail_given_rt(continue) = 0.60;
+                // p_short_duration_given_rt(why_expl) = 0.40; 
+                // p_short_duration_given_rt(what_expl) = 0.70; 
+                // p_short_duration_given_rt(next_action) = 0.80; 
+                // p_short_duration_given_rt(apology) = 0.70; 
+                // p_short_duration_given_rt(ask_for_help) = 0.60; 
+                // p_short_duration_given_rt(continue) = 0.80;
+                // p_just_contrastive_given_rt(why_expl) = 0.60; 
+                // p_just_contrastive_given_rt(what_expl) = 0.40; 
+                // p_just_contrastive_given_rt(next_action) = 0.30; 
+                // p_just_contrastive_given_rt(apology) = 0.40; 
+                // p_just_contrastive_given_rt(ask_for_help) = 0.40; 
+                // p_just_contrastive_given_rt(continue) = 0.30;
+
+                // === Mixing weights (global) ===
+                // alpha_modality = 0.5; 
+                // alpha_scope = 0.5; 
+                // alpha_detail = 0.5; 
+                // alpha_duration = 0.6; 
+                // alpha_justification = 0.6;
+
+	};
+}
+
+instance icra2026_instance {
+	domain = icra2026;
+	non-fluents = nf_icra2026;
+	
+        init-state {
+
+                // --- Robots
+                robot_at(tiago, registration_desk);
+
+                // --- Books
+                book_at(book_1, bookshelf_space);
+                book_at(book_2, bookshelf_space);
+
+	};
+
+	max-nondef-actions = 1;
+	horizon  = 30;
+	discount = 1.0;
+}

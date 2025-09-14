@@ -1,0 +1,38 @@
+        reward =
+
+            // (1) Task success: credit only when the handover happens
+            5.0 * sum_{?r: robot, ?bk: book, ?h: human} [ give_book(?r, ?bk, ?h) ]
+
+            // (2) Preference alignment: when issuing an explanatory response
+            + 0.5 * sum_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
+                is_explanatory_response(?rt) * respond(?rt, ?r, ?h, ?s) * (
+                    // modality
+                    (  modality_visual_selected(?rt, ?r, ?h, ?s) ? (modality_visual_wanted(?h) ? 1.0 : 0.0)
+                                                                : (!modality_visual_wanted(?h) ? 1.0 : 0.0) )
+                    + // scope
+                    (  scope_local_selected(?rt, ?r, ?h, ?s) ? (scope_local_wanted(?h) ? 1.0 : 0.0)
+                                                            : (!scope_local_wanted(?h) ? 1.0 : 0.0) )
+                    + // detail
+                    (  detail_summary_selected(?rt, ?r, ?h, ?s) ? (detail_summary_wanted(?h) ? 1.0 : 0.0)
+                                                                : (!detail_summary_wanted(?h) ? 1.0 : 0.0) )
+                    + // duration
+                    (  duration_short_selected(?rt, ?r, ?h, ?s) ? (duration_short_wanted(?h) ? 1.0 : 0.0)
+                                                                : (!duration_short_wanted(?h) ? 1.0 : 0.0) )
+                    + // justification
+                    (  justification_standard_selected(?rt, ?r, ?h, ?s) ? (!justification_contrastive_wanted(?h) ? 1.0 : 0.0)
+                                                                        : ( justification_contrastive_wanted(?h) ? 1.0 : 0.0) )
+                )
+                ]
+
+            // (3) Mild costs
+            - 0.10 * sum_{?r: robot, ?wf: waypoint, ?wt: waypoint}[ goto_waypoint(?r, ?wf, ?wt) ]
+            - 0.05 * sum_{?rt: response_type, ?r: robot, ?h: human, ?s: situation}[
+                        start_explanation_planning(?rt, ?r, ?h, ?s) + end_explanation_planning(?rt, ?r, ?h, ?s) ]
+            - 0.04 * sum_{?rt: response_type, ?r: robot, ?h: human, ?s: situation}[
+                        choose_visual_modality(?rt, ?r, ?h, ?s) + choose_textual_modality(?rt, ?r, ?h, ?s)
+                    + choose_local_scope(?rt, ?r, ?h, ?s) + choose_global_scope(?rt, ?r, ?h, ?s)
+                    + choose_summary_detail(?rt, ?r, ?h, ?s) + choose_narrative_detail(?rt, ?r, ?h, ?s)
+                    + choose_short_duration(?rt, ?r, ?h, ?s) + choose_long_duration(?rt, ?r, ?h, ?s)
+                    + choose_justification_standard(?rt, ?r, ?h, ?s) + choose_justification_contrastive(?rt, ?r, ?h, ?s)
+                ]
+            - 0.01 * sum_{?rt: response_type, ?r: robot, ?h: human, ?s: situation}[ respond(?rt, ?r, ?h, ?s) ];
