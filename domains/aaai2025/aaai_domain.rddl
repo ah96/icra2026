@@ -94,16 +94,16 @@ domain aaai {
         forall_{?r: robot, ?w1: waypoint, ?w2: waypoint} [?w1 == ?w2 | (robot_at(?r, ?w1) => ~robot_at(?r, ?w2))];
     
         // Ask for a book
-        forall_{?h: human, ?r: robot, ?bk: book} [ask_for_book(?h, ?r, ?bk) => (~responded(?r, ?h) ^ exists_{?w: waypoint} [robot_at(?r, ?w) ^ human_at(?h, ?w) ] ^ human_wants_book(?h, ?bk) ) ];
+        forall_{?h: human, ?r: robot, ?bk: book} [ask_for_book(?h, ?r, ?bk) => (~responded(?r, ?h) ^ ~delivered(?bk, ?h) ^ human_wants_book(?h, ?bk) ^ exists_{?w: waypoint} [robot_at(?r, ?w) ^ human_at(?h, ?w) ] ) ];
 
-        // Ask for a book
-        forall_{?s: situation, ?r: robot, ?h: human, ?bk: book} [situation_happens(?s, ?r, ?h, ?bk) => (~responded(?r, ?h) ^  exists_{?w: waypoint} [robot_at(?r, ?w) ^ book_at(?bk, ?w) ^ asked_for_book(?h, ?r, ?bk) ^ is_active_situation(?r, ?h, ?s) ^ ~delivered(?bk, ?h) ] ) ];
+        // Situation happens
+        forall_{?s: situation, ?r: robot, ?h: human, ?bk: book} [situation_happens(?s, ?r, ?h, ?bk) => (~responded(?r, ?h) ^ ~delivered(?bk, ?h) ^ asked_for_book(?h, ?r, ?bk) ^ is_active_situation(?r, ?h, ?s) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ book_at(?bk, ?w) ] ) ];
     
         // Fetch book
-        forall_{?r: robot, ?bk: book, ?h: human, ?s: situation} [fetch_book(?r, ?bk, ?h, ?s) => ( exists_{?w: waypoint} [~responded(?r, ?h) ^ situation_happened(?s, ?r, ?h, ?bk) ^ robot_at(?r, ?w) ^ book_at(?bk, ?w) ^ ~holding(?r, ?bk) ^ fetching_prob_bool(?s) ] ) ];
+        forall_{?r: robot, ?bk: book, ?h: human, ?s: situation} [fetch_book(?r, ?bk, ?h, ?s) => (~responded(?r, ?h) ^ ~delivered(?bk, ?h) ^ situation_happened(?s, ?r, ?h, ?bk) ^ ~holding(?r, ?bk) ^ fetching_prob_bool(?s) ^ exists_{?w: waypoint} [ robot_at(?r, ?w) ^ book_at(?bk, ?w) ] ) ];
 
         // Give book
-        forall_{?r: robot, ?bk: book, ?h: human} [give_book(?r, ?bk, ?h) => (~responded(?r, ?h) ^ exists_{?w: waypoint} [robot_at(?r, ?w) ^ human_at(?h, ?w)] ^ holding(?r, ?bk) ^ asked_for_book(?h, ?r, ?bk) ) ];
+        forall_{?r: robot, ?bk: book, ?h: human} [give_book(?r, ?bk, ?h) => (~responded(?r, ?h) ^ ~delivered(?bk, ?h) ^ exists_{?w: waypoint} [robot_at(?r, ?w) ^ human_at(?h, ?w)] ^ holding(?r, ?bk) ^ asked_for_book(?h, ?r, ?bk) ) ];
 
         // Respond
         forall_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [ respond(?rt, ?r, ?h, ?s) => ( 
@@ -118,32 +118,7 @@ domain aaai {
     //reward = sum_{?r: robot, ?h: human} [ if (responded(?r, ?h) ^ exists_{?bk: book} (delivered(?bk, ?h))) then 10000 
     //                                    else if (responded(?r, ?h) ^ ~exists_{?bk: book} (delivered(?bk, ?h))) then 200
     //                                    else -1000 ]
-    //reward = sum_{?r: robot, ?h: human} [ if (responded(?r, ?h)) then 10000 else -100 ];
+    reward = sum_{?r: robot, ?h: human} [ if (responded(?r, ?h)) then 10000 else -100 ];
     //reward = if ((sum_{?h: human} [ if (exists_{?r: robot} (responded(?r, ?h))) then 1 else 0 ]) == N_humans) then 10000 else -100;
-
-    // Encourage covering all humans, penalize waiting each step, tiny move cost
-    // Tunable weights (example values in comments)
-    reward =
-    // per-human waiting penalty until someone has responded to them
-    - 10 * sum_{?hh: human} [
-            if (exists_{?rr: robot} responded(?rr, ?hh)) then 0 else 1
-        ]
-
-    // dense reward for taking a response action this step
-    + 100 * sum_{?rt: response_type, ?r: robot, ?h: human, ?s: situation} [
-            if (respond(?rt, ?r, ?h, ?s)) then 1 else 0
-        ]
-
-    // small movement cost (bind ALL three args of goto_waypoint)
-    - 1   * sum_{?rrr: robot, ?wf: waypoint, ?wt: waypoint} [
-            if (goto_waypoint(?rrr, ?wf, ?wt)) then 1 else 0
-        ]
-
-    // team bonus when every human has been responded to
-    + 500 * (
-            if (forall_{?hhhh: human} (exists_{?rrrr: robot} responded(?rrrr, ?hhhh)))
-            then 1 else 0
-        );
-
 
 }

@@ -43,12 +43,12 @@ non-fluents nf_aaai {
                 // fetching_prob(unforeseen_circumstances) = 0.3;
 
                 fetching_prob_bool(normal_success);
-                // fetching_prob_bool(agent_error) = False;
-                // fetching_prob_bool(uncertainty) = False;
-                // fetching_prob_bool(inability) = False;
+                // fetching_prob_bool(agent_error) = false;
+                // fetching_prob_bool(uncertainty) = false;
+                // fetching_prob_bool(inability) = false;
                 fetching_prob_bool(suboptimal_behavior);
                 fetching_prob_bool(norm_violation);
-                // fetching_prob_bool(unforeseen_circumstances); 
+                // fetching_prob_bool(unforeseen_circumstances) = false; 
 
                 // === Situation → Response-Type priors from study (rows normalized) ===
                 p_resp(apology,normal_success) = 0.11;
